@@ -1,0 +1,34 @@
+{
+  "unitId": "u44-level",
+  "pre": [
+    {
+      "id": "u44_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：水平序列最适合哪种预测思路？",
+      "instruction": "凭直觉选（低利害、可跳过）",
+      "testConfig": {
+        "expected": "B",
+        "options": ["A. 长期趋势外推", "B. 围绕稳定均值平滑", "C. 季节指数调整"]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u44_q1",
+      "type": "fill",
+      "title": "课后测：移动平均取最近几期？",
+      "instruction": "填窗口大小的符号",
+      "testConfig": { "expected": "N" }
+    },
+    {
+      "id": "u44_q2",
+      "type": "multiple_choice",
+      "title": "课后测：α 越大说明？",
+      "instruction": "选最贴切的一项",
+      "testConfig": {
+        "expected": "A",
+        "options": ["A. 越看重近期", "B. 越平滑滞后", "C. 越接近均值"]
+      }
+    }
+  ]
+}

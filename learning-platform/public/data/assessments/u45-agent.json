@@ -1,0 +1,46 @@
+{
+  "unitId": "u45-agent",
+  "pre": [
+    {
+      "id": "u45-agent_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：智能体综合预测",
+      "instruction": "凭直觉选（低利害、可跳过）",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 先分类序列，再选模型",
+          "B. 直接给一个大数",
+          "C. 只做数据清洗",
+          "D. 随机预测"
+        ]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u45-agent_q1",
+      "type": "fill",
+      "title": "课后测：核心概念",
+      "instruction": "补全关键术语",
+      "testConfig": {
+        "expected": "水平"
+      }
+    },
+    {
+      "id": "u45-agent_q2",
+      "type": "multiple_choice",
+      "title": "课后测：备货公式",
+      "instruction": "选最贴切的一项",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 日均需求 × 提前期 + 安全库存",
+          "B. 仅看历史销售额",
+          "C. 仅看趋势线",
+          "D. 随机拍板"
+        ]
+      }
+    }
+  ]
+}

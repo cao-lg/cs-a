@@ -1,0 +1,46 @@
+{
+  "unitId": "u42-clean",
+  "pre": [
+    {
+      "id": "u42-clean_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：逻辑错误数据清洗",
+      "instruction": "凭直觉选（低利害、可跳过）",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 矛盾（销量与销售额互相打架）",
+          "B. 只是显示格式问题，无需处理",
+          "C. 完全正常，订单本就这样",
+          "D. 一定是重复单"
+        ]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u42-clean_q1",
+      "type": "fill",
+      "title": "课后测：核心概念",
+      "instruction": "补全关键术语",
+      "testConfig": {
+        "expected": "矛盾"
+      }
+    },
+    {
+      "id": "u42-clean_q2",
+      "type": "multiple_choice",
+      "title": "课后测：清洗顺序",
+      "instruction": "选最合理的一步",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 先去重，再查不合理，最后查矛盾/违规",
+          "B. 直接外推预测",
+          "C. 删除所有带负值的行",
+          "D. 只改列名"
+        ]
+      }
+    }
+  ]
+}

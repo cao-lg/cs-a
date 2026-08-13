@@ -1,0 +1,371 @@
+{
+  "id": "supply-chain",
+  "title": "数字化供应链运营（AI 智慧学习版）",
+  "description": "从供应链基础认知到需求计划、采购、生产、物流、风险预警与 AI 前沿的完整学习闭环，跟随新人「小北」在「智链优选」供应链运营中心的成长，把知识点变成一场边玩边记的旅程。",
+  "chapters": [
+    {
+      "id": "ch1",
+      "title": "项目一 探索数字供应链运营新升级",
+      "order": 1,
+      "units": [
+        {
+          "id": "sc-1-1",
+          "title": "单元：供应链概念的演变",
+          "path": "sc-1-1.md",
+          "duration": "约 32 分钟",
+          "objectives": [
+            "供应链概念的演变",
+            "供应链的结构",
+            "数子化供应链的定义",
+            "传统供应链与数字化供应链的区别",
+            "供应链数字化转型的驱动力"
+          ],
+          "preAssessment": "sc-1-1",
+          "postAssessment": "sc-1-1"
+        },
+        {
+          "id": "sc-1-2",
+          "title": "单元：数字化供应链的范式革新",
+          "path": "sc-1-2.md",
+          "duration": "约 36 分钟",
+          "objectives": [
+            "简单的引用技术≠真正的数字化转型",
+            "供应链数字化管理的概念",
+            "供应链数字化管理基本原则",
+            "供应链数字化管理的组织实施",
+            "基于产品类型的供应链策略的选择",
+            "数据驱动的供应链模式创新"
+          ],
+          "preAssessment": "sc-1-2",
+          "postAssessment": "sc-1-2"
+        },
+        {
+          "id": "sc-1-3",
+          "title": "单元：供应链协同与数字化协作",
+          "path": "sc-1-3.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "传统供应链协调问题",
+            "提高供应链协调性的方法",
+            "数字化供应链协同"
+          ],
+          "preAssessment": "sc-1-3",
+          "postAssessment": "sc-1-3"
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "title": "项目二 实现需求计划数字化精准化",
+      "order": 2,
+      "units": [
+        {
+          "id": "sc-2-1",
+          "title": "单元：从“以产定销”到“以销定产”：市场驱动转型",
+          "path": "sc-2-1.md",
+          "duration": "约 28 分钟",
+          "objectives": [
+            "从“以产定销”到“以销定产”",
+            "“以客户为核心”的三层内涵",
+            "市场驱动转型的四大关键举措",
+            "转型中的常见误区与规避"
+          ],
+          "preAssessment": "sc-2-1",
+          "postAssessment": "sc-2-1"
+        },
+        {
+          "id": "sc-2-2",
+          "title": "单元：供应链用户画像：从营销视角到供应链视角",
+          "path": "sc-2-2.md",
+          "duration": "约 28 分钟",
+          "objectives": [
+            "从营销视角到供应链视角的用户画像",
+            "供应链用户画像的核心维度",
+            "用户画像在供应链决策中的应用",
+            "数字化工具赋能画像应用"
+          ],
+          "preAssessment": "sc-2-2",
+          "postAssessment": "sc-2-2"
+        },
+        {
+          "id": "sc-2-3",
+          "title": "单元：客户订单解析与需求预测",
+          "path": "sc-2-3.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "客户订单的多维解析",
+            "从订单分析到需求预测"
+          ],
+          "preAssessment": "sc-2-3",
+          "postAssessment": "sc-2-3"
+        },
+        {
+          "id": "sc-2-4",
+          "title": "单元：数字化 CRM 的供应链视角",
+          "path": "sc-2-4.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "数字化CRM的供应链视角",
+            "数字化CRM的核心能力构建",
+            "数字化CRM与供应链的融合场景"
+          ],
+          "preAssessment": "sc-2-4",
+          "postAssessment": "sc-2-4"
+        },
+        {
+          "id": "sc-2-5",
+          "title": "单元：需求计划的数字化交付",
+          "path": "sc-2-5.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "需求计划的内涵升级",
+            "需求计划重构的关键要素",
+            "需求计划的数字化交付"
+          ],
+          "preAssessment": "sc-2-5",
+          "postAssessment": "sc-2-5"
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "title": "项目三 打造数字化采购新优势",
+      "order": 3,
+      "units": [
+        {
+          "id": "sc-3-1",
+          "title": "单元：采购的数字化演进与策略",
+          "path": "sc-3-1.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "采购的数字化演进",
+            "采购方式的分类",
+            "数字化供应链运营下采购策略演进"
+          ],
+          "preAssessment": "sc-3-1",
+          "postAssessment": "sc-3-1"
+        },
+        {
+          "id": "sc-3-2",
+          "title": "单元：采购计划与数据驱动的需求分析",
+          "path": "sc-3-2.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "采购计划：从需求预测到采购订单的协同链路",
+            "采购订单数据的来源：请购单的填报与流转",
+            "采购需求分析：数据驱动的精准“需求清单”"
+          ],
+          "preAssessment": "sc-3-2",
+          "postAssessment": "sc-3-2"
+        },
+        {
+          "id": "sc-3-3",
+          "title": "单元：供应商选择与绩效评估",
+          "path": "sc-3-3.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "供应商选择",
+            "供应商绩效评估"
+          ],
+          "preAssessment": "sc-3-3",
+          "postAssessment": "sc-3-3"
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "title": "项目四 构建数智化生产管理新范式",
+      "order": 4,
+      "units": [
+        {
+          "id": "sc-4-1",
+          "title": "单元：从经验驱动到数据驱动的智能制造",
+          "path": "sc-4-1.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "“经验驱动”到“数据驱动”的数字化生产管理的必然趋势",
+            "数字化生产管理的核心内涵",
+            "数字化生产管理的价值维度"
+          ],
+          "preAssessment": "sc-4-1",
+          "postAssessment": "sc-4-1"
+        },
+        {
+          "id": "sc-4-2",
+          "title": "单元：数据驱动的智能排程",
+          "path": "sc-4-2.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "案例导入",
+            "数据驱动的智能排程逻辑"
+          ],
+          "preAssessment": "sc-4-2",
+          "postAssessment": "sc-4-2"
+        },
+        {
+          "id": "sc-4-3",
+          "title": "单元：动态 MRP 与可视化生产监控",
+          "path": "sc-4-3.md",
+          "duration": "约 28 分钟",
+          "objectives": [
+            "动态MRP：实时数据驱动的物料控制",
+            "物联网如何“照亮”生产黑箱",
+            "生产可视化监控：让数据“看得见”",
+            "智能预警与响应"
+          ],
+          "preAssessment": "sc-4-3",
+          "postAssessment": "sc-4-3"
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "title": "项目五 重塑端到端智慧物流新路径",
+      "order": 5,
+      "units": [
+        {
+          "id": "sc-5-1",
+          "title": "单元：智慧物流的概念演变与技术架构",
+          "path": "sc-5-1.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "供应智慧物流的概念演变",
+            "智慧物流的技术架构"
+          ],
+          "preAssessment": "sc-5-1",
+          "postAssessment": "sc-5-1"
+        },
+        {
+          "id": "sc-5-2",
+          "title": "单元：智能仓储：数据驱动的仓储优化",
+          "path": "sc-5-2.md",
+          "duration": "约 28 分钟",
+          "objectives": [
+            "智能仓储的概念演进与内涵解析",
+            "传统仓储管理的痛点与数字化破局",
+            "数据驱动的仓储优化核心技术",
+            "智能仓储的实施路径与组织变革"
+          ],
+          "preAssessment": "sc-5-2",
+          "postAssessment": "sc-5-2"
+        },
+        {
+          "id": "sc-5-4",
+          "title": "单元：在途管理与物流全程可视化",
+          "path": "sc-5-4.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "传统在途管理的盲区与痛点",
+            "物联网技术在途管控体系",
+            "物流全程可视化的实现路径"
+          ],
+          "preAssessment": "sc-5-4",
+          "postAssessment": "sc-5-4"
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "title": "项目六 创建供应链风险智能预警新格局",
+      "order": 6,
+      "units": [
+        {
+          "id": "sc-6-1",
+          "title": "单元：供应链风险管理的智能转型",
+          "path": "sc-6-1.md",
+          "duration": "约 28 分钟",
+          "objectives": [
+            "供应链风险管理的发展历程",
+            "传统供应链风险管理的局限",
+            "智能时代供应链风险管理的转型方向",
+            "智能时代供应链风险管理的转型价值"
+          ],
+          "preAssessment": "sc-6-1",
+          "postAssessment": "sc-6-1"
+        },
+        {
+          "id": "sc-6-2",
+          "title": "单元：供应链舆情与风险感知",
+          "path": "sc-6-2.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "供应链舆情与风险感知的核心认知",
+            "数字供应链中的多源舆情数据",
+            "多源数据驱动的供应链舆情监测"
+          ],
+          "preAssessment": "sc-6-2",
+          "postAssessment": "sc-6-2"
+        },
+        {
+          "id": "sc-6-3",
+          "title": "单元：风险量化与智能预警模型",
+          "path": "sc-6-3.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "数字供应链风险量化与智能预警的核心认知",
+            "供应链风险量化的核心指标与方法",
+            "多源数据驱动的供应链舆情深度分析"
+          ],
+          "preAssessment": "sc-6-3",
+          "postAssessment": "sc-6-3"
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "title": "项目七 前沿视野：AI+供应链与人才",
+      "order": 7,
+      "units": [
+        {
+          "id": "sc-7-1",
+          "title": "单元：“人工智能+供应链”的内涵与路径",
+          "path": "sc-7-1.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "“人工智能+供应链”的内涵",
+            "AI技术在供应链领域的应用路径"
+          ],
+          "preAssessment": "sc-7-1",
+          "postAssessment": "sc-7-1"
+        },
+        {
+          "id": "sc-7-2",
+          "title": "单元：数字供应链的技术架构与技术闭环",
+          "path": "sc-7-2.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "从感知到智能：数字供应链的技术架构",
+            "从决策到可信：数字供应链的技术闭环"
+          ],
+          "preAssessment": "sc-7-2",
+          "postAssessment": "sc-7-2"
+        },
+        {
+          "id": "sc-7-3",
+          "title": "单元：AI 应用的边界与渗透深度",
+          "path": "sc-7-3.md",
+          "duration": "约 20 分钟",
+          "objectives": [
+            "应用边界的横向拓展：四个典型领域",
+            "应用深度的纵向分析：AI渗透率的梯次分布"
+          ],
+          "preAssessment": "sc-7-3",
+          "postAssessment": "sc-7-3"
+        },
+        {
+          "id": "sc-7-4",
+          "title": "单元：供应链人才需求的结构性升级",
+          "path": "sc-7-4.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "人才需求的结构性变化",
+            "新增岗位全景图",
+            "能力需求的系统性升级"
+          ],
+          "preAssessment": "sc-7-4",
+          "postAssessment": "sc-7-4"
+        }
+      ]
+    }
+  ]
+}

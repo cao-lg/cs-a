@@ -1,0 +1,46 @@
+{
+  "unitId": "u44-trend",
+  "pre": [
+    {
+      "id": "u44-trend_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：趋势预测",
+      "instruction": "凭直觉选（低利害、可跳过）",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 趋势预测（长期方向外推）",
+          "B. 季节预测（周期）",
+          "C. 水平预测（绕均值）",
+          "D. 数据清洗"
+        ]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u44-trend_q1",
+      "type": "fill",
+      "title": "课后测：核心概念",
+      "instruction": "补全关键术语",
+      "testConfig": {
+        "expected": "1"
+      }
+    },
+    {
+      "id": "u44-trend_q2",
+      "type": "multiple_choice",
+      "title": "课后测：外推风险",
+      "instruction": "选最贴切的一项",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 风险大（不可信）",
+          "B. 风险小",
+          "C. 毫无影响",
+          "D. 反而更准"
+        ]
+      }
+    }
+  ]
+}

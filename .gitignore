@@ -1,0 +1,26 @@
+# ---- Dependencies ----
+learning-platform/node_modules/
+
+# ---- Build output ----
+learning-platform/dist/
+dist/
+
+# ---- WorkBuddy internal project data ----
+.workbuddy/
+
+# ---- OS / junk ----
+$RECYCLE.BIN/
+System Volume Information/
+
+# ---- Packed archives ----
+*.zip
+
+# ---- Large textbook source binaries (keep structured book.json instead) ----
+_textbook/textbook.doc
+_textbook/textbook.docx
+
+# ---- Screenshot clutter at learning-platform root (keep public/ images) ----
+learning-platform/*.png
+
+# ---- Vite temp config files ----
+learning-platform/vite.config.js.timestamp-*.mjs

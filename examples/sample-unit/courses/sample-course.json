@@ -1,0 +1,27 @@
+{
+  "id": "sample-course",
+  "title": "示例课程：生活中的量化思维",
+  "description": "用于演示自适应学习闭环的示例课程（通用模板，不绑定具体学科）",
+  "chapters": [
+    {
+      "id": "ch01",
+      "title": "第一章：基础概念",
+      "order": 1,
+      "units": [
+        {
+          "id": "u01-temperature",
+          "title": "单元一：温度换算",
+          "path": "u01-temperature.md",
+          "duration": "10分钟",
+          "objectives": [
+            "理解摄氏度（°C）与华氏度（°F）的关系",
+            "掌握换算公式 F = C × 9/5 + 32",
+            "能独立完成换算挑战"
+          ],
+          "preAssessment": "u01-temperature",
+          "postAssessment": "u01-temperature"
+        }
+      ]
+    }
+  ]
+}

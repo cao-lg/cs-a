@@ -1,0 +1,36 @@
+{
+  "unitId": "u01-temperature",
+  "pre": [
+    {
+      "id": "u01_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：0°C 等于多少华氏度？",
+      "instruction": "凭直觉选，不知道也没关系（低利害、可跳过）",
+      "testConfig": {
+        "expected": "B",
+        "options": ["A. 0°F", "B. 32°F", "C. 100°F"]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u01_q1",
+      "type": "fill",
+      "title": "课后测：补全公式 F = C × ___ + 32",
+      "instruction": "填写缩放系数",
+      "testConfig": {
+        "expected": "9/5"
+      }
+    },
+    {
+      "id": "u01_q2",
+      "type": "multiple_choice",
+      "title": "课后测：25°C 约等于多少华氏度？",
+      "instruction": "用公式算一算",
+      "testConfig": {
+        "expected": "B",
+        "options": ["A. 57°F", "B. 77°F", "C. 97°F"]
+      }
+    }
+  ]
+}

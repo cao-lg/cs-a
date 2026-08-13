@@ -1,0 +1,46 @@
+{
+  "unitId": "u44-season",
+  "pre": [
+    {
+      "id": "u44-season_p1",
+      "type": "multiple_choice",
+      "title": "课前小测：季节波动预测",
+      "instruction": "凭直觉选（低利害、可跳过）",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 季节波动（周期性起伏）",
+          "B. 水平波动（绕均值）",
+          "C. 趋势波动（单调）",
+          "D. 随机波动"
+        ]
+      }
+    }
+  ],
+  "post": [
+    {
+      "id": "u44-season_q1",
+      "type": "fill",
+      "title": "课后测：核心概念",
+      "instruction": "补全关键术语",
+      "testConfig": {
+        "expected": "总"
+      }
+    },
+    {
+      "id": "u44-season_q2",
+      "type": "multiple_choice",
+      "title": "课后测：指数含义",
+      "instruction": "选最贴切的一项",
+      "testConfig": {
+        "expected": "A",
+        "options": [
+          "A. 旺季（高于常年）",
+          "B. 淡季（低于常年）",
+          "C. 异常值",
+          "D. 平稳期"
+        ]
+      }
+    }
+  ]
+}
