@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getAllAssessments, getProgress, getUser, setUserName, getTimes, getWrongBook } from '../lib/storage'
 import { getAssessment } from '../lib/api'
 import { Reveal, Stagger, StaggerItem } from './motion'
+import LearnerProfile from './LearnerProfile'
 
 // 兼容两种题库结构：{ items: [...] } 或直接 [...]
 function extractItems(block) {
@@ -138,6 +139,8 @@ export default function Profile() {
           </Reveal>
         )
       })()}
+
+      <LearnerProfile />
 
       <h2>单元掌握度</h2>
       {units.length === 0 && (

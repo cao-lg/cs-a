@@ -117,6 +117,11 @@ export default function LearnUnit() {
     { done: status.hasPost, label: '后测' },
   ]
 
+  // 自适应路由：计算"下一单元"（用于增益弹窗的真实分流）
+  const flatUnits = course?.chapters?.flatMap((ch) => ch.units) || []
+  const curIdx = flatUnits.findIndex((x) => x.id === unitId)
+  const nextUnit = curIdx >= 0 && curIdx < flatUnits.length - 1 ? flatUnits[curIdx + 1] : null
+
   return (
     <div className="learn">
       <div className="learn-head">
@@ -229,8 +234,17 @@ export default function LearnUnit() {
                   课前 {summary.pre}/{summary.preTotal} → 课后 {summary.post}/{summary.postTotal}
                 </p>
                 <p className="hint">
-                  课前测已是满分，说明本单元对你大都是已知内容。想挑战更高阶，可以去试试单元里的「挑战」任务。
+                  课前测已是满分，说明本单元对你大都是已知内容。
                 </p>
+                <div className="gain-actions">
+                  {nextUnit ? (
+                    <Link className="btn ghost" to={`/learn/${courseId}/${nextUnit.id}`}>
+                      下一单元：{nextUnit.title} →
+                    </Link>
+                  ) : (
+                    <span className="hint">已是最后一单元 🎉 去「学习画像」看看你的成长</span>
+                  )}
+                </div>
               </>
             ) : (
               <>
@@ -242,13 +256,35 @@ export default function LearnUnit() {
                 <p>
                   课前 {summary.pre}/{summary.preTotal} → 课后 {summary.post}/{summary.postTotal}
                 </p>
-                <p className="hint">
-                  {summary.gain > 0
-                    ? '有效学习！继续保持。'
-                    : summary.gain === 0
-                    ? '持平，可复习薄弱点。'
-                    : '提示退步，建议重学本单元。'}
-                </p>
+                <div className="gain-actions">
+                  {summary.gain > 0 ? (
+                    <>
+                      <p className="hint">有效学习！继续保持。</p>
+                      {nextUnit && (
+                        <Link className="btn ghost" to={`/learn/${courseId}/${nextUnit.id}`}>
+                          下一单元：{nextUnit.title} →
+                        </Link>
+                      )}
+                    </>
+                  ) : summary.gain === 0 ? (
+                    <>
+                      <p className="hint">持平，建议复习本单元薄弱点。</p>
+                      <button className="btn ghost" onClick={() => { setSummary(null); navigate('/profile') }}>
+                        查看错题本 →
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <p className="hint">提示退步：后测低于前测，建议重做本单元弱项。</p>
+                      <button className="btn ghost" onClick={() => { setSummary(null); setShowPost(true) }}>
+                        重做后测 →
+                      </button>
+                      <button className="btn ghost" onClick={() => { setSummary(null); navigate('/profile') }}>
+                        看错题本 →
+                      </button>
+                    </>
+                  )}
+                </div>
               </>
             )}
             <button className="btn primary" onClick={() => setSummary(null)}>
