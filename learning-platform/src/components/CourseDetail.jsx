@@ -90,6 +90,41 @@ export default function CourseDetail() {
           </section>
         )
       })}
+
+      <FinalExamCard course={course} status={status} exams={exams} courseId={courseId} />
     </div>
+  )
+}
+
+function FinalExamCard({ course, status, exams, courseId }) {
+  const flatAll = course.chapters.flatMap((ch) => ch.units.map((u) => u.id))
+  const allUnitsDone = flatAll.length > 0 && flatAll.every((uid) => status[uid]?.pre && status[uid]?.post)
+  const allExamsPassed = course.chapters.every((ch) => exams[ch.id]?.passed)
+  const finalRec = exams['final'] || {}
+  let state, tip
+  if (finalRec.passed) {
+    state = <span className="badge done">✓ 已通关 {finalRec.bestScore}%</span>
+    tip = '点开可换卷重考刷分'
+  } else if (allExamsPassed) {
+    state = <span className="badge">🎓 可参加</span>
+    tip = '七章阶段考试已全部通关，来拿下结业大考'
+  } else if (allUnitsDone) {
+    state = <span className="badge">可参加（建议先通关阶段考试）</span>
+    tip = '课程已全部学完，建议先逐章通关阶段考试再来挑战'
+  } else {
+    state = <span className="badge locked">🔒 待解锁</span>
+    tip = '学完全部单元并通关七章阶段考试后开放'
+  }
+  return (
+    <section className="chapter">
+      <h2>结业考核</h2>
+      <Link to={`/exam/${courseId}/final`} className={`card exam-card final ${finalRec.passed ? 'done' : ''}`}>
+        <div className="unit-head">
+          <span>🎓 结业大考</span>
+          {state}
+        </div>
+        <div className="meta">{tip}</div>
+      </Link>
+    </section>
   )
 }

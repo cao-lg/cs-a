@@ -52,6 +52,8 @@ export default function LearnerProfile() {
   if (!d) return <div className="state">生成画像中…</div>
 
   const { assess, cp, prog, times, exams, index, flatAll, examChapters } = d
+  const finalPassed = !!exams['final']?.passed
+  const anyCourseId = Object.values(index)[0]?.courseId || 'supply-chain'
 
   // —— 逐单元掌握度与增益 ——
   const units = Object.entries(assess).map(([uid, rec]) => {
@@ -113,6 +115,10 @@ export default function LearnerProfile() {
         t: `阶段通关 · ${passedExams.length}/${examChapters.length} 章`,
         c: passedExams.length === examChapters.length ? 'ok' : 'info'
       })
+    }
+    const finalPassed = !!exams['final']?.passed
+    if (finalPassed) {
+      tags.push({ t: '🎓 结业通关 · 已获结业资格', c: 'ok' })
     }
   }
 
@@ -225,13 +231,17 @@ export default function LearnerProfile() {
 
         <div className="portrait-block">
           <div className="portrait-sub">阶段考试通关</div>
-          <div className="exam-chips">
+            <div className="exam-chips">
             {examChapters.map((e) => (
               <Link key={e.id} to={`/exam/${e.courseId}/${e.id}`} className={`exam-chip ${e.passed ? 'done' : ''}`}>
                 <span className="exam-chip-t">{e.title.replace(/^项目[一二三四五六七]\s*/, '')}</span>
                 <span className="exam-chip-s">{e.passed ? `✓ ${e.best}%` : '未通关'}</span>
               </Link>
             ))}
+            <Link key="final" to={`/exam/${anyCourseId}/final`} className={`exam-chip ${finalPassed ? 'done' : ''}`}>
+              <span className="exam-chip-t">🎓 结业大考</span>
+              <span className="exam-chip-s">{finalPassed ? `✓ ${exams['final'].bestScore}%` : '未通关'}</span>
+            </Link>
           </div>
         </div>
 

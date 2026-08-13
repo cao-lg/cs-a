@@ -1,6 +1,6 @@
 // 本地持久化层：用 idb-keyval（IndexedDB）模拟后端 D1 存储。
 // 对应《需求补充规格 v0.2》新增表：assessment_records / checkpoint_records / progress
-import { get, set } from 'idb-keyval'
+import { get, set, del } from 'idb-keyval'
 
 const USER_KEY = 'lp:user:v4'
 const ASSESS_KEY = 'lp:assess:v4' // { [unitId]: { pre, post, preHistory, postHistory } }
@@ -147,4 +147,22 @@ export async function getExamRecord(chapterId) {
 
 export async function getAllExams() {
   return (await get(EXAM_KEY)) || {}
+}
+
+// 管理后台：导出 / 清空全部学习者数据（不含课程内容静态资源）
+export async function exportLearnerData() {
+  const [user, assess, checkpoints, progress, time, exams] = await Promise.all([
+    get(USER_KEY),
+    get(ASSESS_KEY),
+    get(CP_KEY),
+    get(PROGRESS_KEY),
+    get(TIME_KEY),
+    get(EXAM_KEY)
+  ])
+  return { exportedAt: Date.now(), user, assess, checkpoints, progress, time, exams }
+}
+
+const ALL_KEYS = [USER_KEY, ASSESS_KEY, CP_KEY, PROGRESS_KEY, TIME_KEY, EXAM_KEY]
+export async function clearAllLearnerData() {
+  for (const k of ALL_KEYS) await del(k)
 }

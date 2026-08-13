@@ -1,0 +1,488 @@
+{
+  "courseId": "supply-chain",
+  "chapterId": "final",
+  "title": "结业大考",
+  "description": "跨全 7 章的综合能力测验，检验你对《数字化供应链运营》整体框架与核心方法的掌握。覆盖认知、需求、采购、生产、物流、风险、AI 七大模块。",
+  "passScore": 70,
+  "pick": 22,
+  "pool": [
+    {
+      "id": "f1",
+      "type": "multiple_choice",
+      "stem": "牛鞭效应（Bullwhip Effect）的根本特征是？",
+      "options": [
+        "需求信息沿供应链向上游传递时被逐级放大失真",
+        "上游企业总是比下游企业库存更多",
+        "产品价格随销量上升而下降",
+        "生产计划完全由零售商决定"
+      ],
+      "answer": "需求信息沿供应链向上游传递时被逐级放大失真",
+      "unitId": "sc-1-1",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "牛鞭效应"
+    },
+    {
+      "id": "f2",
+      "type": "multiple_choice",
+      "stem": "以下哪项不属于供应链的五大基本成员节点？",
+      "options": ["供应商", "制造商", "零售商", "竞争对手"],
+      "answer": "竞争对手",
+      "unitId": "sc-1-1",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "供应链结构"
+    },
+    {
+      "id": "f3",
+      "type": "multiple_choice",
+      "stem": "标准 GB/T 23050 定义的核心对象是？",
+      "options": ["数字化供应链", "传统物流园区", "跨境电商平台", "工业机器人本体"],
+      "answer": "数字化供应链",
+      "unitId": "sc-1-2",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "数字化供应链定义"
+    },
+    {
+      "id": "f4",
+      "type": "multiple_choice",
+      "stem": "费舍尔（Fisher）产品-供应链匹配理论中，功能性产品应匹配哪类供应链？",
+      "options": [
+        "高效型（成本最优）供应链",
+        "响应型（灵活快速）供应链",
+        "延迟型供应链",
+        "敏捷型但不强调成本"
+      ],
+      "answer": "高效型（成本最优）供应链",
+      "unitId": "sc-1-2",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "费舍尔矩阵"
+    },
+    {
+      "id": "f5",
+      "type": "multiple_choice",
+      "stem": "供应链协同通常分为战略层、战术层和哪一层？",
+      "options": ["操作层（执行层）", "财务层", "法务层", "公关层"],
+      "answer": "操作层（执行层）",
+      "unitId": "sc-1-3",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "协同三层次"
+    },
+    {
+      "id": "f6",
+      "type": "multiple_choice",
+      "stem": "用户画像的四大维度通常不包括？",
+      "options": ["基本属性", "行为特征", "兴趣偏好", "员工工号"],
+      "answer": "员工工号",
+      "unitId": "sc-2-2",
+      "chapter": "项目二 需求驱动",
+      "concept": "用户画像维度"
+    },
+    {
+      "id": "f7",
+      "type": "multiple_choice",
+      "stem": "在 RFM 客户价值模型中，R 代表的是？",
+      "options": [
+        "Recency 最近一次消费时间",
+        "Revenue 总收入",
+        "Ratio 比率",
+        "Range 范围"
+      ],
+      "answer": "Recency 最近一次消费时间",
+      "unitId": "sc-2-3",
+      "chapter": "项目二 需求驱动",
+      "concept": "RFM 模型"
+    },
+    {
+      "id": "f8",
+      "type": "multiple_choice",
+      "stem": "购物篮分析（Market Basket Analysis）主要用于发现？",
+      "options": [
+        "商品之间的关联购买规律",
+        "库存周转率",
+        "运输路径最优",
+        "供应商信用"
+      ],
+      "answer": "商品之间的关联购买规律",
+      "unitId": "sc-2-3",
+      "chapter": "项目二 需求驱动",
+      "concept": "购物篮分析"
+    },
+    {
+      "id": "f9",
+      "type": "multiple_choice",
+      "stem": "ABC 分类管理中，A 类物料的典型特征是？",
+      "options": [
+        "金额占比高、品种数量少",
+        "金额占比低、品种数量多",
+        "金额与数量都中等",
+        "无规律"
+      ],
+      "answer": "金额占比高、品种数量少",
+      "unitId": "sc-2-5",
+      "chapter": "项目二 需求驱动",
+      "concept": "ABC 分类"
+    },
+    {
+      "id": "f10",
+      "type": "multiple_choice",
+      "stem": "动态安全库存主要用来应对？",
+      "options": [
+        "需求与提前期的不确定性波动",
+        "员工请假",
+        "汇率变动",
+        "广告投放"
+      ],
+      "answer": "需求与提前期的不确定性波动",
+      "unitId": "sc-2-5",
+      "chapter": "项目二 需求驱动",
+      "concept": "安全库存"
+    },
+    {
+      "id": "f11",
+      "type": "multiple_choice",
+      "stem": "S&OP（销售与运营计划）的核心目标是？",
+      "options": [
+        "打通销售、生产与财务的跨职能供需平衡",
+        "只做生产排程",
+        "只做采购谈判",
+        "只做库存盘点"
+      ],
+      "answer": "打通销售、生产与财务的跨职能供需平衡",
+      "unitId": "sc-2-5",
+      "chapter": "项目二 需求驱动",
+      "concept": "S&OP"
+    },
+    {
+      "id": "f12",
+      "type": "multiple_choice",
+      "stem": "“以客户为核心”的供应链强调？",
+      "options": [
+        "围绕真实客户需求拉动全链",
+        "以最低采购价为唯一目标",
+        "由产能决定销售",
+        "以库存为中心"
+      ],
+      "answer": "围绕真实客户需求拉动全链",
+      "unitId": "sc-2-1",
+      "chapter": "项目二 需求驱动",
+      "concept": "以客户为核心"
+    },
+    {
+      "id": "f13",
+      "type": "multiple_choice",
+      "stem": "采购管理演进的四个阶段依次是？",
+      "options": [
+        "交易型→成本型→战略型→数字化",
+        "战略型→交易型→成本型→数字化",
+        "数字化→战略型→成本型→交易型",
+        "成本型→交易型→战略型→数字化"
+      ],
+      "answer": "交易型→成本型→战略型→数字化",
+      "unitId": "sc-3-1",
+      "chapter": "项目三 采购供应",
+      "concept": "采购四阶段"
+    },
+    {
+      "id": "f14",
+      "type": "multiple_choice",
+      "stem": "JIT（准时制）采购的核心思想是？",
+      "options": [
+        "在恰当时机、按恰当时量送达所需物料",
+        "大批量低价囤货",
+        "按需月度补货",
+        "全部外包"
+      ],
+      "answer": "在恰当时机、按恰当时量送达所需物料",
+      "unitId": "sc-3-1",
+      "chapter": "项目三 采购供应",
+      "concept": "JIT 采购"
+    },
+    {
+      "id": "f15",
+      "type": "multiple_choice",
+      "stem": "TCO（总拥有成本）与单纯采购价的区别在于，它还包含？",
+      "options": [
+        "持有、缺货、质量、物流等全生命周期成本",
+        "仅运费",
+        "仅税费",
+        "仅包装费"
+      ],
+      "answer": "持有、缺货、质量、物流等全生命周期成本",
+      "unitId": "sc-3-3",
+      "chapter": "项目三 采购供应",
+      "concept": "TCO 总拥有成本"
+    },
+    {
+      "id": "f16",
+      "type": "multiple_choice",
+      "stem": "EOQ（经济订货批量）模型的核心是平衡哪两类成本？",
+      "options": ["订货成本与持有成本", "采购价与售价", "运费与关税", "人工与设备"],
+      "answer": "订货成本与持有成本",
+      "unitId": "sc-3-2",
+      "chapter": "项目三 采购供应",
+      "concept": "EOQ"
+    },
+    {
+      "id": "f17",
+      "type": "multiple_choice",
+      "stem": "MRP 中某物料的净需求 ≈ ？",
+      "options": [
+        "毛需求 − 可用库存（期初 + 在途 − 已分配）",
+        "毛需求 + 安全库存",
+        "毛需求 × 2",
+        "毛需求 − 已售出"
+      ],
+      "answer": "毛需求 − 可用库存（期初 + 在途 − 已分配）",
+      "unitId": "sc-3-2",
+      "chapter": "项目三 采购供应",
+      "concept": "MRP 净需求"
+    },
+    {
+      "id": "f18",
+      "type": "multiple_choice",
+      "stem": "选择供应商时常用的“四把尺子”主要指？",
+      "options": [
+        "质量、成本、交付、服务（含柔性与创新）",
+        "规模、名气、距离、关系",
+        "价格、价格、价格、价格",
+        "老板关系"
+      ],
+      "answer": "质量、成本、交付、服务（含柔性与创新）",
+      "unitId": "sc-3-3",
+      "chapter": "项目三 采购供应",
+      "concept": "供应商选择"
+    },
+    {
+      "id": "f19",
+      "type": "multiple_choice",
+      "stem": "生产数字化强调的全流程特征不包括？",
+      "options": [
+        "只看单机设备效率",
+        "全流程可视化",
+        "动态响应",
+        "端到端集成"
+      ],
+      "answer": "只看单机设备效率",
+      "unitId": "sc-4-1",
+      "chapter": "项目四 生产",
+      "concept": "生产数字化内涵"
+    },
+    {
+      "id": "f20",
+      "type": "multiple_choice",
+      "stem": "从“经验驱动”迈向“数据驱动”生产，不属于典型跨越的是？",
+      "options": [
+        "完全取消人工",
+        "决策客观化（APS）",
+        "信息实时化（IIoT/5G）",
+        "系统集成（数字孪生）"
+      ],
+      "answer": "完全取消人工",
+      "unitId": "sc-4-1",
+      "chapter": "项目四 生产",
+      "concept": "数据驱动跨越"
+    },
+    {
+      "id": "f21",
+      "type": "multiple_choice",
+      "stem": "智能排程中常借助约束理论（TOC）来识别并突破？",
+      "options": [
+        "生产瓶颈（制约环节）",
+        "市场营销口号",
+        "财务报表格式",
+        "员工考勤"
+      ],
+      "answer": "生产瓶颈（制约环节）",
+      "unitId": "sc-4-2",
+      "chapter": "项目四 生产",
+      "concept": "约束理论 TOC"
+    },
+    {
+      "id": "f22",
+      "type": "multiple_choice",
+      "stem": "动态 MRP 借助 IIoT 四层架构，主要解决的是？",
+      "options": [
+        "让车间执行数据实时可见、照亮生产黑箱",
+        "替代所有管理人员",
+        "取消采购",
+        "减少产品种类"
+      ],
+      "answer": "让车间执行数据实时可见、照亮生产黑箱",
+      "unitId": "sc-4-3",
+      "chapter": "项目四 生产",
+      "concept": "IIoT 架构"
+    },
+    {
+      "id": "f23",
+      "type": "multiple_choice",
+      "stem": "物流概念演进的三个阶段依次是？",
+      "options": [
+        "实体配送→物流管理→智慧物流",
+        "仓储→运输→配送",
+        "海运→空运→铁路",
+        "采购→生产→销售"
+      ],
+      "answer": "实体配送→物流管理→智慧物流",
+      "unitId": "sc-5-1",
+      "chapter": "项目五 智慧物流",
+      "concept": "物流概念演进"
+    },
+    {
+      "id": "f24",
+      "type": "multiple_choice",
+      "stem": "智慧物流的典型技术架构由感知层、网络层、平台层和哪一层构成？",
+      "options": ["应用层", "口号层", "愿景层", "财务层"],
+      "answer": "应用层",
+      "unitId": "sc-5-1",
+      "chapter": "项目五 智慧物流",
+      "concept": "技术架构"
+    },
+    {
+      "id": "f25",
+      "type": "multiple_choice",
+      "stem": "WMS 与 WCS 在智能仓储中的关系是？",
+      "options": [
+        "WMS 管“存什么/放哪”，WCS 管“设备怎么动”",
+        "两者完全相同",
+        "WCS 替代 WMS",
+        "都不需要"
+      ],
+      "answer": "WMS 管“存什么/放哪”，WCS 管“设备怎么动”",
+      "unitId": "sc-5-2",
+      "chapter": "项目五 智慧物流",
+      "concept": "WMS/WCS"
+    },
+    {
+      "id": "f26",
+      "type": "multiple_choice",
+      "stem": "数字孪生在仓储中的应用价值主要是？",
+      "options": [
+        "在虚拟空间镜像并模拟优化实体仓储运作",
+        "替代实体仓库",
+        "只用于做宣传视频",
+        "统计员工工资"
+      ],
+      "answer": "在虚拟空间镜像并模拟优化实体仓储运作",
+      "unitId": "sc-5-2",
+      "chapter": "项目五 智慧物流",
+      "concept": "数字孪生"
+    },
+    {
+      "id": "f27",
+      "type": "multiple_choice",
+      "stem": "IoT 在途管控体系主要用于解决？",
+      "options": [
+        "货物在运输途中的位置、状态与环境盲区",
+        "仓库货架摆放",
+        "客户退款",
+        "供应商招标"
+      ],
+      "answer": "货物在运输途中的位置、状态与环境盲区",
+      "unitId": "sc-5-4",
+      "chapter": "项目五 智慧物流",
+      "concept": "在途管理"
+    },
+    {
+      "id": "f28",
+      "type": "multiple_choice",
+      "stem": "传统供应链风险管理的主要局限不包括？",
+      "options": [
+        "数据驱动、实时预警、生态协同",
+        "被动响应",
+        "信息滞后",
+        "孤岛割裂"
+      ],
+      "answer": "数据驱动、实时预警、生态协同",
+      "unitId": "sc-6-1",
+      "chapter": "项目六 风险预警",
+      "concept": "传统局限"
+    },
+    {
+      "id": "f29",
+      "type": "multiple_choice",
+      "stem": "供应链舆情监测的四类典型特征通常包含？",
+      "options": [
+        "多源、实时、情感化、关联性强",
+        "单一、滞后、无关、静态",
+        "只来自内部",
+        "仅财务数据"
+      ],
+      "answer": "多源、实时、情感化、关联性强",
+      "unitId": "sc-6-2",
+      "chapter": "项目六 风险预警",
+      "concept": "舆情特征"
+    },
+    {
+      "id": "f30",
+      "type": "multiple_choice",
+      "stem": "风险智能预警常用的分级颜色由高到低为？",
+      "options": ["红、橙、黄、蓝", "蓝、黄、橙、红", "绿、青、蓝、紫", "黑、白、灰、金"],
+      "answer": "红、橙、黄、蓝",
+      "unitId": "sc-6-3",
+      "chapter": "项目六 风险预警",
+      "concept": "预警分级"
+    },
+    {
+      "id": "f31",
+      "type": "multiple_choice",
+      "stem": "信息化→数字化→数智化的演进顺序中，数智化的核心是？",
+      "options": [
+        "以 AI 实现自主感知—决策—执行",
+        "仅把纸质单据电子化",
+        "只做数据存储",
+        "完全不需要人"
+      ],
+      "answer": "以 AI 实现自主感知—决策—执行",
+      "unitId": "sc-7-1",
+      "chapter": "项目七 AI+人才",
+      "concept": "数智化"
+    },
+    {
+      "id": "f32",
+      "type": "multiple_choice",
+      "stem": "AI+供应链的技术闭环中，承担“决策”角色的是？",
+      "options": [
+        "AI 智能体（Agent）",
+        "物联网传感器",
+        "区块链账本",
+        "数字孪生镜像"
+      ],
+      "answer": "AI 智能体（Agent）",
+      "unitId": "sc-7-2",
+      "chapter": "项目七 AI+人才",
+      "concept": "技术闭环"
+    },
+    {
+      "id": "f33",
+      "type": "multiple_choice",
+      "stem": "供应链人才结构性升级中，新增岗位更强调？",
+      "options": [
+        "供应链思维 + 数据决策 + 跨学科协作",
+        "单一搬运操作",
+        "纯手工记录",
+        "只懂财务"
+      ],
+      "answer": "供应链思维 + 数据决策 + 跨学科协作",
+      "unitId": "sc-7-4",
+      "chapter": "项目七 AI+人才",
+      "concept": "人才能力"
+    },
+    {
+      "id": "f34",
+      "type": "fill",
+      "stem": "____ 模型（Economic Order Quantity）用于确定使订货成本与持有成本总和最低的订货批量。",
+      "answer": "EOQ",
+      "unitId": "sc-3-2",
+      "chapter": "项目三 采购供应",
+      "concept": "EOQ"
+    },
+    {
+      "id": "f35",
+      "type": "fill",
+      "stem": "牛鞭效应是指需求信息在供应链中向上游传递时被逐级____（放大/缩小）的现象。",
+      "answer": "放大",
+      "unitId": "sc-1-1",
+      "chapter": "项目一 供应链基础认知",
+      "concept": "牛鞭效应"
+    }
+  ]
+}

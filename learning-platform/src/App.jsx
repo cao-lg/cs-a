@@ -5,6 +5,7 @@ import CourseDetail from './components/CourseDetail'
 import LearnUnit from './components/LearnUnit'
 import StageExam from './components/StageExam'
 import Profile from './components/Profile'
+import AdminConsole from './components/AdminConsole'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/learn/:courseId/:unitId" element={<LearnUnit />} />
         <Route path="/exam/:courseId/:chapterId" element={<StageExam />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/admin" element={<AdminConsole />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>

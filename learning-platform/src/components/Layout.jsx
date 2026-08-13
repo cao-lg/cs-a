@@ -13,6 +13,7 @@ export default function Layout({ children }) {
         <nav className="nav">
           <Link to="/" className={pathname === '/' ? 'active' : ''}>课程</Link>
           <Link to="/profile" className={pathname.startsWith('/profile') ? 'active' : ''}>我的进步</Link>
+          <Link to="/admin" className={pathname.startsWith('/admin') ? 'active' : ''}>管理后台</Link>
         </nav>
       </header>
       <main className="content">{children}</main>

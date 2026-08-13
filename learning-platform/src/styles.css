@@ -685,3 +685,66 @@ p { margin: 8px 0; }
 .exam-chip-t { font-size: 13px; color: var(--text); }
 .exam-chip-s { font-size: 12px; color: var(--text-faint); }
 .exam-chip.done .exam-chip-s { color: var(--mint); font-weight: 700; }
+
+/* 结业大考卡高亮 */
+.exam-card.final {
+  border-style: solid;
+  border-color: var(--mint);
+  background: linear-gradient(135deg, var(--mint-soft), transparent);
+  box-shadow: 0 10px 30px -18px rgba(127, 225, 196, 0.5);
+}
+.exam-card.final.done { box-shadow: 0 10px 30px -16px var(--ok-glow, rgba(95, 214, 160, 0.5)); }
+
+/* tag.bad（画像诊断标签补齐） */
+.tag.bad { background: rgba(255, 107, 107, 0.12); color: #ff8b8b; border-color: rgba(255, 107, 107, 0.3); }
+
+/* ---------- 管理后台 ---------- */
+.admin { max-width: 1080px; margin: 0 auto; padding: 0 22px 60px; }
+.admin .back { display: inline-flex; margin-bottom: 14px; }
+.admin h1 { font-size: 28px; margin: 8px 0 10px; }
+.admin .desc { color: var(--text-dim); max-width: 70ch; line-height: 1.7; }
+.admin .desc strong { color: var(--accent); background: var(--accent-soft); padding: 0 6px; border-radius: 6px; }
+.admin-sec { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--border); }
+.admin-sec h2 { font-size: 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.admin-sec h3 { font-size: 15px; margin: 22px 0 10px; color: var(--text); }
+.admin-sec .hint { color: var(--text-dim); font-size: 13.5px; margin-bottom: 14px; max-width: 70ch; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.stat-grid.small { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.stat-grid .stat { min-width: 0; }
+
+.admin-gate { max-width: 460px; margin: 60px auto; padding: 30px; text-align: center; }
+.admin-gate h2 { font-size: 24px; margin-bottom: 10px; }
+.admin-gate .hint { color: var(--text-dim); font-size: 13.5px; margin-bottom: 20px; }
+.admin-gate-form { display: flex; gap: 10px; }
+.admin-gate-form .inp { flex: 1; }
+.admin-err { color: #ff8b8b; margin-top: 12px; font-size: 13.5px; }
+
+.admin-summary { display: inline-block; margin: 14px 0; padding: 8px 16px; border-radius: 999px; font-weight: 800; }
+.admin-summary.ok { background: var(--ok-soft); color: var(--ok); }
+.admin-summary.bad { background: rgba(255, 107, 107, 0.12); color: #ff8b8b; }
+
+.admin-table { display: flex; flex-direction: column; gap: 6px; }
+.admin-row {
+  display: grid; grid-template-columns: 1.4fr 0.9fr 2.2fr 0.6fr; gap: 10px; align-items: center;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 11px 14px; font-size: 13.5px;
+}
+.admin-row.ok { border-color: rgba(127, 225, 196, 0.35); }
+.admin-row.bad { border-color: rgba(255, 107, 107, 0.35); }
+.admin-row.head { background: var(--bg-soft); font-weight: 700; color: var(--text); }
+.ar-name { color: var(--text); font-weight: 600; }
+.ar-type { color: var(--text-dim); }
+.ar-detail { color: var(--text-dim); }
+.ar-flag { text-align: right; font-weight: 800; }
+.admin-row.ok .ar-flag { color: var(--mint); }
+.admin-row.bad .ar-flag { color: #ff8b8b; }
+
+.admin-mgmt { display: flex; gap: 12px; flex-wrap: wrap; }
+.admin-msg { margin-top: 14px; padding: 12px 16px; border-radius: 12px; background: var(--ok-soft); color: var(--ok); font-size: 13.5px; }
+.btn.danger { background: rgba(255, 107, 107, 0.14); color: #ff8b8b; border: 1px solid rgba(255, 107, 107, 0.3); }
+.btn.danger:hover { background: rgba(255, 107, 107, 0.22); }
+
+@media (max-width: 700px) {
+  .admin-row { grid-template-columns: 1fr 0.6fr; }
+  .admin-row .ar-detail { grid-column: 1 / -1; }
+}
