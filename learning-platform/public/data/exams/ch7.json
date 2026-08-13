@@ -1,0 +1,184 @@
+{
+  "chapterId": "ch7",
+  "courseId": "supply-chain",
+  "title": "项目七 阶段考试",
+  "description": "覆盖 AI+供应链与人才升级：数智化演进、技术闭环、应用边界与人才结构的综合测验。",
+  "passScore": 60,
+  "pick": 10,
+  "pool": [
+    {
+      "id": "ch7-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-7-1",
+      "concept": "三台阶",
+      "question": "企业供应链的数字化演进通常经历？",
+      "options": [
+        "信息化→数字化→数智化",
+        "手工→机械→自动",
+        "国内→出口→进口",
+        "采购→生产→销售"
+      ],
+      "answer": "信息化→数字化→数智化",
+      "points": 10
+    },
+    {
+      "id": "ch7-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-7-1",
+      "concept": "落地路径",
+      "question": "AI+供应链的落地路径通常表示为？",
+      "options": [
+        "技术→场景→产品→效果",
+        "想法→放弃→再想法",
+        "采购→退货→再采购",
+        "设计→搁置→遗忘"
+      ],
+      "answer": "技术→场景→产品→效果",
+      "points": 10
+    },
+    {
+      "id": "ch7-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-7-2",
+      "concept": "技术闭环-感知",
+      "question": "在数字供应链技术闭环中，负责“感知”的是？",
+      "options": [
+        "物联网",
+        "纯人工",
+        "纸质单据",
+        "口头汇报"
+      ],
+      "answer": "物联网",
+      "points": 10
+    },
+    {
+      "id": "ch7-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-7-2",
+      "concept": "AI 智能体",
+      "question": "数字供应链中 AI 智能体的主要角色是？",
+      "options": [
+        "基于数据与规则自主决策",
+        "只做数据展示",
+        "只做仓储搬运",
+        "只做财务记账"
+      ],
+      "answer": "基于数据与规则自主决策",
+      "points": 10
+    },
+    {
+      "id": "ch7-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-7-2",
+      "concept": "区块链+数字孪生",
+      "question": "区块链与数字孪生在数字供应链中主要提供？",
+      "options": [
+        "可信存证与仿真验证",
+        "不可信数据",
+        "随机结果",
+        "替代工人"
+      ],
+      "answer": "可信存证与仿真验证",
+      "points": 10
+    },
+    {
+      "id": "ch7-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-7-3",
+      "concept": "横向拓展",
+      "question": "AI 在供应链中的“横向拓展”指的是？",
+      "options": [
+        "从单一环节扩展到更多业务领域（如农业、跨境等）",
+        "只做仓储",
+        "只做运输",
+        "只做财务"
+      ],
+      "answer": "从单一环节扩展到更多业务领域（如农业、跨境等）",
+      "points": 10
+    },
+    {
+      "id": "ch7-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-7-3",
+      "concept": "纵向渗透率",
+      "question": "“纵向渗透率梯次”描述的是？",
+      "options": [
+        "不同环节 AI 应用深度由浅入深的分布",
+        "价格上涨梯度",
+        "员工数量梯度",
+        "仓库面积梯度"
+      ],
+      "answer": "不同环节 AI 应用深度由浅入深的分布",
+      "points": 10
+    },
+    {
+      "id": "ch7-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-7-4",
+      "concept": "岗位更替",
+      "question": "AI+供应链带来的岗位变化主要是？",
+      "options": [
+        "部分重复岗位被替代，同时新增高价值岗位",
+        "所有岗位消失",
+        "岗位数量不变且内容不变",
+        "只减少管理层"
+      ],
+      "answer": "部分重复岗位被替代，同时新增高价值岗位",
+      "points": 10
+    },
+    {
+      "id": "ch7-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-7-4",
+      "concept": "新增岗位",
+      "question": "下列更可能是 AI+供应链时代新增的岗位是？",
+      "options": [
+        "供应链数据分析师 / 智能体训练师",
+        "纯手工记账员",
+        "纸质档案管理员",
+        "电话推销员"
+      ],
+      "answer": "供应链数据分析师 / 智能体训练师",
+      "points": 10
+    },
+    {
+      "id": "ch7-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-7-4",
+      "concept": "能力三维",
+      "question": "新时代供应链人才的能力框架通常强调？",
+      "options": [
+        "供应链思维、数据决策、跨学科协作",
+        "只懂单一岗位操作",
+        "排斥数据",
+        "拒绝协作"
+      ],
+      "answer": "供应链思维、数据决策、跨学科协作",
+      "points": 10
+    },
+    {
+      "id": "ch7-q11",
+      "type": "multiple_choice",
+      "unitId": "sc-7-4",
+      "concept": "ESG",
+      "question": "供应链人才需要具备的绿色素养对应哪一理念？",
+      "options": [
+        "ESG（环境、社会、治理）",
+        "仅利润最大化",
+        "仅成本最低",
+        "仅速度最快"
+      ],
+      "answer": "ESG（环境、社会、治理）",
+      "points": 10
+    },
+    {
+      "id": "ch7-q12",
+      "type": "fill",
+      "unitId": "sc-7-1",
+      "concept": "数智化",
+      "question": "信息化、数字化之后的更高阶段，强调“数据+智能”自主感知、决策与优化，称为_____阶段。",
+      "answer": "数智化",
+      "points": 10
+    }
+  ]
+}

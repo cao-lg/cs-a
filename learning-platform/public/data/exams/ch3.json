@@ -1,0 +1,184 @@
+{
+  "chapterId": "ch3",
+  "courseId": "supply-chain",
+  "title": "项目三 阶段考试",
+  "description": "覆盖数字化采购：采购演进、需求协同、MRP/EOQ 与供应商选择的综合测验。",
+  "passScore": 60,
+  "pick": 10,
+  "pool": [
+    {
+      "id": "ch3-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-3-1",
+      "concept": "采购四阶段",
+      "question": "采购管理的演进通常经历哪四个阶段？",
+      "options": [
+        "事务型采购→成本导向采购→战略采购→数字化协同采购",
+        "采购→生产→仓储→配送",
+        "招标→议价→签约→付款",
+        "国内采购→进口→出口→转口"
+      ],
+      "answer": "事务型采购→成本导向采购→战略采购→数字化协同采购",
+      "points": 10
+    },
+    {
+      "id": "ch3-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-3-1",
+      "concept": "JIT 采购",
+      "question": "JIT（准时制）采购的核心理念是？",
+      "options": [
+        "在需要的时候按需要的量交付",
+        "尽可能多囤积库存",
+        "提前半年备货",
+        "只为低价不顾交期"
+      ],
+      "answer": "在需要的时候按需要的量交付",
+      "points": 10
+    },
+    {
+      "id": "ch3-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-3-1",
+      "concept": "绿色采购",
+      "question": "绿色采购强调在采购中考虑？",
+      "options": [
+        "环境与社会责任影响",
+        "仅最低价格",
+        "仅最短交期",
+        "仅最大批量"
+      ],
+      "answer": "环境与社会责任影响",
+      "points": 10
+    },
+    {
+      "id": "ch3-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-3-2",
+      "concept": "MRP 净需求",
+      "question": "MRP 中净需求的计算通常是？",
+      "options": [
+        "毛需求 − 可用库存 − 在途 + 安全库存",
+        "毛需求 + 库存",
+        "毛需求 × 2",
+        "毛需求 − 销售额"
+      ],
+      "answer": "毛需求 − 可用库存 − 在途 + 安全库存",
+      "points": 10
+    },
+    {
+      "id": "ch3-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-3-2",
+      "concept": "请购单",
+      "question": "采购流程中，请购单（PR）的作用是？",
+      "options": [
+        "提出内部采购需求并触发后续流程",
+        "直接给供应商付款",
+        "替代合同",
+        "记录销售订单"
+      ],
+      "answer": "提出内部采购需求并触发后续流程",
+      "points": 10
+    },
+    {
+      "id": "ch3-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-3-2",
+      "concept": "EOQ",
+      "question": "经济订货批量（EOQ）的目标是平衡哪两类成本？",
+      "options": [
+        "订货成本与持有成本",
+        "人工与材料",
+        "运输与关税",
+        "广告与研发"
+      ],
+      "answer": "订货成本与持有成本",
+      "points": 10
+    },
+    {
+      "id": "ch3-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-3-3",
+      "concept": "供应商四把尺子",
+      "question": "供应商选择的“四把尺子”通常指？",
+      "options": [
+        "质量、成本、交付、服务",
+        "颜色、重量、体积、价格",
+        "地域、规模、名气、关系",
+        "学历、经验、年龄、性别"
+      ],
+      "answer": "质量、成本、交付、服务",
+      "points": 10
+    },
+    {
+      "id": "ch3-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-3-3",
+      "concept": "TCO 总拥有成本",
+      "question": "总拥有成本（TCO）相比单纯采购价，额外强调了？",
+      "options": [
+        "全生命周期内的隐性成本（物流、质量、维护等）",
+        "只算发票金额",
+        "只算运费",
+        "只算税费"
+      ],
+      "answer": "全生命周期内的隐性成本（物流、质量、维护等）",
+      "points": 10
+    },
+    {
+      "id": "ch3-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-3-3",
+      "concept": "供应商绩效",
+      "question": "供应商绩效评估通常关注的维度不包括？",
+      "options": [
+        "供应商老板的学历",
+        "质量",
+        "交付准时率",
+        "成本竞争力"
+      ],
+      "answer": "供应商老板的学历",
+      "points": 10
+    },
+    {
+      "id": "ch3-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-3-3",
+      "concept": "数字化 SRM",
+      "question": "数字化 SRM（供应商关系管理）系统主要帮助？",
+      "options": [
+        "统一管理与协同供应商全生命周期",
+        "取代所有线下沟通",
+        "只做付款",
+        "只做招标公告"
+      ],
+      "answer": "统一管理与协同供应商全生命周期",
+      "points": 10
+    },
+    {
+      "id": "ch3-q11",
+      "type": "multiple_choice",
+      "unitId": "sc-3-1",
+      "concept": "战略采购",
+      "question": "战略采购更关注？",
+      "options": [
+        "与关键供应商建立长期共赢关系",
+        "一次性压价",
+        "短期套利",
+        "随机采购"
+      ],
+      "answer": "与关键供应商建立长期共赢关系",
+      "points": 10
+    },
+    {
+      "id": "ch3-q12",
+      "type": "fill",
+      "unitId": "sc-3-2",
+      "concept": "约束理论",
+      "question": "约束理论（TOC）认为系统的整体产出由最弱的_____决定，改善它才能提升全局。",
+      "answer": "瓶颈",
+      "points": 10
+    }
+  ]
+}

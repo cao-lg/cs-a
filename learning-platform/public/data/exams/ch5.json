@@ -1,0 +1,169 @@
+{
+  "chapterId": "ch5",
+  "courseId": "supply-chain",
+  "title": "项目五 阶段考试",
+  "description": "覆盖端到端智慧物流：概念演变、智能仓储与在途可视化管理的综合测验。",
+  "passScore": 60,
+  "pick": 9,
+  "pool": [
+    {
+      "id": "ch5-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-5-1",
+      "concept": "概念三级跳",
+      "question": "物流概念的演进三阶段通常是？",
+      "options": [
+        "实体配送→物流管理→智慧物流",
+        "采购→生产→销售",
+        "国内→出口→进口",
+        "手工→机械→自动"
+      ],
+      "answer": "实体配送→物流管理→智慧物流",
+      "points": 10
+    },
+    {
+      "id": "ch5-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-5-1",
+      "concept": "本质特征",
+      "question": "智慧物流区别于传统物流的本质特征不包括？",
+      "options": [
+        "完全无人化管理（无任何人员）",
+        "互联互通",
+        "数据驱动",
+        "智能决策"
+      ],
+      "answer": "完全无人化管理（无任何人员）",
+      "points": 10
+    },
+    {
+      "id": "ch5-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-5-2",
+      "concept": "仓储痛点",
+      "question": "传统仓储管理的典型痛点不包括？",
+      "options": [
+        "库存透明、零错发",
+        "找货难",
+        "账实不符",
+        "作业效率低"
+      ],
+      "answer": "库存透明、零错发",
+      "points": 10
+    },
+    {
+      "id": "ch5-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-5-2",
+      "concept": "仓储核心技术",
+      "question": "下列哪些是智能仓储的关键使能技术？",
+      "options": [
+        "IoT + WMS/WCS + 数字孪生 + AI",
+        "仅靠纸质台账",
+        "仅靠人力记忆",
+        "仅靠电话沟通"
+      ],
+      "answer": "IoT + WMS/WCS + 数字孪生 + AI",
+      "points": 10
+    },
+    {
+      "id": "ch5-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-5-4",
+      "concept": "在途盲区",
+      "question": "传统在途管理的主要盲区是？",
+      "options": [
+        "货物位置与状态不可实时感知",
+        "运费太便宜",
+        "车辆太多",
+        "司机太闲"
+      ],
+      "answer": "货物位置与状态不可实时感知",
+      "points": 10
+    },
+    {
+      "id": "ch5-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-5-4",
+      "concept": "全程可视化",
+      "question": "物流全程可视化通常涵盖哪四个维度？",
+      "options": [
+        "货物、车辆、环境、异常",
+        "价格、销量、利润、库存",
+        "采购、生产、仓储、配送",
+        "订单、发票、合同、回款"
+      ],
+      "answer": "货物、车辆、环境、异常",
+      "points": 10
+    },
+    {
+      "id": "ch5-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-5-1",
+      "concept": "技术架构",
+      "question": "智慧物流技术架构中“网络层”的作用是？",
+      "options": [
+        "实现设备与平台之间的数据传输互联",
+        "仅做数据存储",
+        "仅做人工录入",
+        "仅做打印"
+      ],
+      "answer": "实现设备与平台之间的数据传输互联",
+      "points": 10
+    },
+    {
+      "id": "ch5-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-5-2",
+      "concept": "实施路径",
+      "question": "智能仓储实施路径常从多个“视图”切入，其目的主要是？",
+      "options": [
+        "打通业务、数据与系统的落地闭环",
+        "只买机器人",
+        "只装修仓库",
+        "只招更多人"
+      ],
+      "answer": "打通业务、数据与系统的落地闭环",
+      "points": 10
+    },
+    {
+      "id": "ch5-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-5-4",
+      "concept": "IoT 在途管控",
+      "question": "IoT 在途管控体系帮助实现？",
+      "options": [
+        "对运输全程的位置、温湿度与异常实时掌控",
+        "取消司机",
+        "减少订单",
+        "降低可见性"
+      ],
+      "answer": "对运输全程的位置、温湿度与异常实时掌控",
+      "points": 10
+    },
+    {
+      "id": "ch5-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-5-2",
+      "concept": "数字孪生仓储",
+      "question": "数字孪生在仓储中的应用主要是为了？",
+      "options": [
+        "在虚拟空间仿真并优化仓内作业",
+        "替代仓库建筑",
+        "印刷标签",
+        "防盗门禁"
+      ],
+      "answer": "在虚拟空间仿真并优化仓内作业",
+      "points": 10
+    },
+    {
+      "id": "ch5-q11",
+      "type": "fill",
+      "unitId": "sc-5-1",
+      "concept": "智慧物流基础",
+      "question": "智慧物流的核心是以_____为基础，实现物流活动的自动化与智能化。",
+      "answer": "数据",
+      "points": 10
+    }
+  ]
+}

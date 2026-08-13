@@ -1,0 +1,184 @@
+{
+  "chapterId": "ch2",
+  "courseId": "supply-chain",
+  "title": "项目二 阶段考试",
+  "description": "覆盖需求计划数字化：以销定产、用户画像、订单预测、供应链 CRM 与需求计划交付的综合测验。",
+  "passScore": 60,
+  "pick": 10,
+  "pool": [
+    {
+      "id": "ch2-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-2-1",
+      "concept": "以销定产",
+      "question": "“以销定产”转型的核心是从什么出发组织生产？",
+      "options": [
+        "市场需求与客户订单",
+        "企业生产能力和库存",
+        "竞争对手的产量",
+        "历史最高产能"
+      ],
+      "answer": "市场需求与客户订单",
+      "points": 10
+    },
+    {
+      "id": "ch2-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-2-1",
+      "concept": "以客户为核心",
+      "question": "“以客户为核心”通常不包含以下哪一层内涵？",
+      "options": [
+        "忽视客户反馈",
+        "需求感知",
+        "体验设计",
+        "敏捷响应"
+      ],
+      "answer": "忽视客户反馈",
+      "points": 10
+    },
+    {
+      "id": "ch2-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-2-3",
+      "concept": "RFM 模型",
+      "question": "RFM 模型中，R、F、M 分别指代？",
+      "options": [
+        "近度、频度、额度",
+        "区域、频率、金额",
+        "排名、流量、转化",
+        "需求、供给、制造"
+      ],
+      "answer": "近度、频度、额度",
+      "points": 10
+    },
+    {
+      "id": "ch2-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-2-3",
+      "concept": "预测三级跃迁",
+      "question": "需求预测的三级跃迁通常是指？",
+      "options": [
+        "描述过去→诊断原因→预测未来",
+        "收集→存储→删除",
+        "计划→执行→考核",
+        "采购→生产→销售"
+      ],
+      "answer": "描述过去→诊断原因→预测未来",
+      "points": 10
+    },
+    {
+      "id": "ch2-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-2-2",
+      "concept": "供应链用户画像",
+      "question": "供应链视角的用户画像相比营销视角，更强调？",
+      "options": [
+        "客户的供应链行为特征（订单、交付、库存）",
+        "客户的性别年龄",
+        "客户的兴趣爱好",
+        "客户的社交账号"
+      ],
+      "answer": "客户的供应链行为特征（订单、交付、库存）",
+      "points": 10
+    },
+    {
+      "id": "ch2-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-2-4",
+      "concept": "供应链 CRM 闭环",
+      "question": "数字化供应链 CRM 的核心价值在于？",
+      "options": [
+        "把客户反馈闭环到计划与生产",
+        "只做售后投诉登记",
+        "替代所有销售人员",
+        "取消客户关系"
+      ],
+      "answer": "把客户反馈闭环到计划与生产",
+      "points": 10
+    },
+    {
+      "id": "ch2-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-2-5",
+      "concept": "主需求计划 MDS",
+      "question": "主需求计划（MDS）的主要作用是？",
+      "options": [
+        "把综合需求分解为各产品的时间化生产/采购计划",
+        "计算员工工资",
+        "管理仓库面积",
+        "制定广告预算"
+      ],
+      "answer": "把综合需求分解为各产品的时间化生产/采购计划",
+      "points": 10
+    },
+    {
+      "id": "ch2-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-2-5",
+      "concept": "ABC + XYZ 分类",
+      "question": "在库存分类中，ABC 通常按什么划分，XYZ 按什么划分？",
+      "options": [
+        "ABC 按金额贡献，XYZ 按需求波动",
+        "ABC 按体积，XYZ 按颜色",
+        "ABC 按重量，XYZ 按产地",
+        "ABC 按人数，XYZ 按部门"
+      ],
+      "answer": "ABC 按金额贡献，XYZ 按需求波动",
+      "points": 10
+    },
+    {
+      "id": "ch2-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-2-5",
+      "concept": "ATP 可承诺量",
+      "question": "ATP（可承诺量）主要用于回答什么问题？",
+      "options": [
+        "当前能给客户承诺多少可用库存",
+        "产品成本是多少",
+        "供应商地址",
+        "物流费用"
+      ],
+      "answer": "当前能给客户承诺多少可用库存",
+      "points": 10
+    },
+    {
+      "id": "ch2-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-2-5",
+      "concept": "S&OP",
+      "question": "S&OP（销售与运营计划）的核心目标是？",
+      "options": [
+        "平衡需求与供应并达成共识",
+        "只做销售预测",
+        "只管生产排程",
+        "取消计划"
+      ],
+      "answer": "平衡需求与供应并达成共识",
+      "points": 10
+    },
+    {
+      "id": "ch2-q11",
+      "type": "multiple_choice",
+      "unitId": "sc-2-1",
+      "concept": "转型误区",
+      "question": "推进“以客户为核心”时，常见误区是？",
+      "options": [
+        "把客户中心等同于无底线满足所有诉求",
+        "建立需求感知机制",
+        "设计一致体验",
+        "构建敏捷响应"
+      ],
+      "answer": "把客户中心等同于无底线满足所有诉求",
+      "points": 10
+    },
+    {
+      "id": "ch2-q12",
+      "type": "fill",
+      "unitId": "sc-2-2",
+      "concept": "客户数据中台",
+      "question": "客户数据中台（CDP）的主要作用是打通并统一管理_____数据，支撑供应链精准决策。",
+      "answer": "客户",
+      "points": 10
+    }
+  ]
+}

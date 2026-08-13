@@ -7,6 +7,7 @@ const ASSESS_KEY = 'lp:assess:v4' // { [unitId]: { pre, post, preHistory, postHi
 const CP_KEY = 'lp:checkpoint:v4' // { [`${unitId}:${itemId}`]: { kind, correct, attempts, last_at } }
 const PROGRESS_KEY = 'lp:progress:v4'
 const TIME_KEY = 'lp:time:v4' // { units: { [unitId]: ms }, days: { [YYYY-MM-DD]: ms } }
+const EXAM_KEY = 'lp:exam:v4' // { [chapterId]: { attempts, bestScore, passed, lastTaken } }
 
 export async function getOrCreateUser() {
   let u = await get(USER_KEY)
@@ -125,4 +126,25 @@ export async function getWrongBook() {
     }
   }
   return wrong
+}
+
+// 阶段考试记录：按 chapterId -> { attempts, bestScore, passed, lastTaken }
+export async function saveExam(chapterId, record) {
+  const all = (await get(EXAM_KEY)) || {}
+  const u = all[chapterId] || { attempts: [] }
+  u.attempts = [...(u.attempts || []), record].slice(-10)
+  u.bestScore = Math.max(u.bestScore ?? 0, record.pct)
+  u.passed = u.passed || record.passed
+  u.lastTaken = record.taken_at
+  all[chapterId] = u
+  await set(EXAM_KEY, all)
+}
+
+export async function getExamRecord(chapterId) {
+  const all = (await get(EXAM_KEY)) || {}
+  return all[chapterId] || {}
+}
+
+export async function getAllExams() {
+  return (await get(EXAM_KEY)) || {}
 }

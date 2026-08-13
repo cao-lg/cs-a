@@ -3,7 +3,7 @@
 // 输出：①能力雷达 ②诊断标签 ③薄弱知识域(按章) ④学习行为画像 ⑤自适应建议(复习/挑战/下一站)
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getAllAssessments, getCheckpoints, getProgress, getTimes } from '../lib/storage'
+import { getAllAssessments, getCheckpoints, getProgress, getTimes, getAllExams } from '../lib/storage'
 import { listCourses, getCourse } from '../lib/api'
 import RadarChart from './RadarChart'
 import { Reveal, Stagger, StaggerItem } from './motion'
@@ -18,32 +18,40 @@ export default function LearnerProfile() {
 
   useEffect(() => {
     ;(async () => {
-      const [assess, cp, prog, times] = await Promise.all([
+      const [assess, cp, prog, times, exams] = await Promise.all([
         getAllAssessments(),
         getCheckpoints(),
         getProgress(),
-        getTimes()
+        getTimes(),
+        getAllExams()
       ])
       // 构建 unit 索引：unitId -> { title, chapterTitle, courseId }
       const courseIds = await listCourses()
       const courses = await Promise.all(courseIds.map((id) => getCourse(id)))
       const index = {}
       const flatAll = []
+      const chapters = []
       for (const c of courses) {
         for (const ch of c.chapters || []) {
+          chapters.push({ id: ch.id, title: ch.title, courseId: c.id })
           for (const u of ch.units || []) {
             index[u.id] = { title: u.title, chapterTitle: ch.title, courseId: c.id }
             flatAll.push(u.id)
           }
         }
       }
-      setD({ assess, cp, prog, times, index, flatAll })
+      const examChapters = chapters.map((ch) => ({
+        ...ch,
+        passed: !!exams[ch.id]?.passed,
+        best: exams[ch.id]?.bestScore ?? 0
+      }))
+      setD({ assess, cp, prog, times, exams, index, flatAll, examChapters })
     })()
   }, [])
 
   if (!d) return <div className="state">生成画像中…</div>
 
-  const { assess, cp, prog, times, index, flatAll } = d
+  const { assess, cp, prog, times, exams, index, flatAll, examChapters } = d
 
   // —— 逐单元掌握度与增益 ——
   const units = Object.entries(assess).map(([uid, rec]) => {
@@ -66,7 +74,7 @@ export default function LearnerProfile() {
   })
 
   const assessed = units.filter((u) => u.prePct != null && u.postPct != null)
-  const hasActivity = units.length > 0 || Object.keys(cp).length > 0
+  const hasActivity = units.length > 0 || Object.keys(cp).length > 0 || Object.keys(exams).length > 0
 
   // —— 能力雷达 5 维 ——
   const cpCheck = Object.values(cp).filter((c) => c.kind === 'checkpoint')
@@ -98,6 +106,13 @@ export default function LearnerProfile() {
     if (assessed.length >= 3) {
       const ps = assessed.map((u) => u.postPct)
       if (Math.max(...ps) - Math.min(...ps) > 0.4) tags.push({ t: '偏科型 · 强弱不均', c: 'warn' })
+    }
+    const passedExams = examChapters.filter((e) => e.passed)
+    if (passedExams.length) {
+      tags.push({
+        t: `阶段通关 · ${passedExams.length}/${examChapters.length} 章`,
+        c: passedExams.length === examChapters.length ? 'ok' : 'info'
+      })
     }
   }
 
@@ -207,6 +222,18 @@ export default function LearnerProfile() {
             </div>
           </div>
         )}
+
+        <div className="portrait-block">
+          <div className="portrait-sub">阶段考试通关</div>
+          <div className="exam-chips">
+            {examChapters.map((e) => (
+              <Link key={e.id} to={`/exam/${e.courseId}/${e.id}`} className={`exam-chip ${e.passed ? 'done' : ''}`}>
+                <span className="exam-chip-t">{e.title.replace(/^项目[一二三四五六七]\s*/, '')}</span>
+                <span className="exam-chip-s">{e.passed ? `✓ ${e.best}%` : '未通关'}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         <div className="portrait-block">
           <div className="portrait-sub">自适应建议</div>

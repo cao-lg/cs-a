@@ -1,7 +1,8 @@
 // 模拟后端 API：前端直接读 public/data 静态内容 + IndexedDB 持久化，
 // 等价实现《需求补充规格 v0.2》中的 /api/assessment、/api/assessment/status 等端点。
-import { getStoredAssessment, saveAssessment, getOrCreateUser } from './storage'
+import { getStoredAssessment, saveAssessment, getOrCreateUser, saveExam, getExamRecord, getAllExams } from './storage'
 import { judgeItem } from './judge'
+import { buildExamVariant, makeSeed } from './exam'
 
 const DATA = import.meta.env.BASE_URL + 'data'
 
@@ -75,4 +76,60 @@ export async function getAssessmentStatus(unitId) {
     gain,
     preMastered
   }
+}
+
+// ===== 阶段考试（章节综合测验）=====
+
+export async function getExam(chapterId) {
+  const r = await fetch(`${DATA}/exams/${chapterId}.json`)
+  if (!r.ok) return null
+  return r.json()
+}
+
+export async function getExamResult(chapterId) {
+  return getExamRecord(chapterId)
+}
+
+export async function getAllExamResults() {
+  return getAllExams()
+}
+
+// 开卷：生成一份随机试卷变体（多版本卷防作弊）
+export async function startExam(chapterId) {
+  const exam = await getExam(chapterId)
+  if (!exam) return null
+  const seed = makeSeed()
+  return buildExamVariant(exam, seed)
+}
+
+// POST 阶段考试：评分并落库
+export async function submitExam(chapterId, answers, variantId) {
+  const user = await getOrCreateUser()
+  const exam = await getExam(chapterId)
+  if (!exam) return null
+  const seed = parseInt(variantId, 36) >>> 0
+  const variant = buildExamVariant(exam, seed) // 用同一 seed 重建一致试卷
+  let score = 0
+  const graded = variant.items.map((it) => {
+    const correct = judgeItem(it, answers[it.id])
+    if (correct) score++
+    return { id: it.id, correct, unitId: it.unitId, concept: it.concept }
+  })
+  const total = variant.items.length
+  const pct = total ? Math.round((score / total) * 100) : 0
+  const passed = pct >= (exam.passScore ?? 60)
+  const record = {
+    chapterId,
+    userId: user.id,
+    score,
+    total,
+    pct,
+    passed,
+    variantId,
+    answers,
+    graded,
+    taken_at: Date.now()
+  }
+  await saveExam(chapterId, record)
+  return record
 }

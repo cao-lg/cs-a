@@ -1,0 +1,184 @@
+{
+  "chapterId": "ch4",
+  "courseId": "supply-chain",
+  "title": "项目四 阶段考试",
+  "description": "覆盖数智化生产：数据驱动、智能排程与动态 MRP 及可视化监控的综合测验。",
+  "passScore": 60,
+  "pick": 10,
+  "pool": [
+    {
+      "id": "ch4-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-4-1",
+      "concept": "智能制造内涵",
+      "question": "根据 GB/T 39116，数字化生产管理的核心内涵不包括？",
+      "options": [
+        "完全取消工人",
+        "全流程可视化",
+        "动态响应",
+        "人机协同"
+      ],
+      "answer": "完全取消工人",
+      "points": 10
+    },
+    {
+      "id": "ch4-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-4-1",
+      "concept": "技术架构",
+      "question": "数字化生产的技术架构中，常用于“感知与采集现场数据”的是？",
+      "options": [
+        "物联网与边缘计算",
+        "纯人工记录",
+        "纸质表单",
+        "口头汇报"
+      ],
+      "answer": "物联网与边缘计算",
+      "points": 10
+    },
+    {
+      "id": "ch4-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-4-2",
+      "concept": "规划求解三要素",
+      "question": "用数学规划求解排程问题时，三要素是？",
+      "options": [
+        "决策变量、目标函数、约束",
+        "员工、机器、原料",
+        "颜色、形状、尺寸",
+        "价格、销量、利润"
+      ],
+      "answer": "决策变量、目标函数、约束",
+      "points": 10
+    },
+    {
+      "id": "ch4-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-4-2",
+      "concept": "排程闭环",
+      "question": "数据驱动智能排程的闭环通常包含？",
+      "options": [
+        "感知—决策—执行—学习",
+        "计划—混乱—放弃",
+        "采购—退货—再采购",
+        "设计—搁置—遗忘"
+      ],
+      "answer": "感知—决策—执行—学习",
+      "points": 10
+    },
+    {
+      "id": "ch4-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-4-3",
+      "concept": "IIoT 架构",
+      "question": "工业物联网（IIoT）照亮生产黑箱的典型架构层次是？",
+      "options": [
+        "感知层—网络层—平台层—应用层",
+        "云—端—边—管",
+        "采购—生产—仓储—配送",
+        "计划—执行—考核—奖惩"
+      ],
+      "answer": "感知层—网络层—平台层—应用层",
+      "points": 10
+    },
+    {
+      "id": "ch4-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-4-3",
+      "concept": "预警分级",
+      "question": "生产智能预警常采用的分级颜色不包括？",
+      "options": [
+        "紫色",
+        "红色",
+        "橙色",
+        "黄色"
+      ],
+      "answer": "紫色",
+      "points": 10
+    },
+    {
+      "id": "ch4-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-4-1",
+      "concept": "数据驱动价值",
+      "question": "从经验驱动转向数据驱动，对生产管理最直接的价值是？",
+      "options": [
+        "决策更加客观、实时、可预测",
+        "完全依赖直觉",
+        "增加人工审批",
+        "减少数据使用"
+      ],
+      "answer": "决策更加客观、实时、可预测",
+      "points": 10
+    },
+    {
+      "id": "ch4-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-4-3",
+      "concept": "可视化看板",
+      "question": "生产可视化监控看板的核心作用是？",
+      "options": [
+        "让生产状态实时“看得见”、可干预",
+        "把数据藏起来",
+        "只在月底汇报",
+        "取消监控"
+      ],
+      "answer": "让生产状态实时“看得见”、可干预",
+      "points": 10
+    },
+    {
+      "id": "ch4-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-4-2",
+      "concept": "排程优化目标",
+      "question": "智能排程通常追求的优化目标不包括？",
+      "options": [
+        "最大化设备空闲等待",
+        "缩短交付周期",
+        "提升设备利用率",
+        "降低换产损耗"
+      ],
+      "answer": "最大化设备空闲等待",
+      "points": 10
+    },
+    {
+      "id": "ch4-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-4-1",
+      "concept": "数字孪生",
+      "question": "数字孪生在技术架构中主要用于？",
+      "options": [
+        "对物理产线进行仿真与优化",
+        "替代真实工人",
+        "印刷标签",
+        "仓库防盗"
+      ],
+      "answer": "对物理产线进行仿真与优化",
+      "points": 10
+    },
+    {
+      "id": "ch4-q11",
+      "type": "multiple_choice",
+      "unitId": "sc-4-3",
+      "concept": "动态 MRP",
+      "question": "动态 MRP 相比传统 MRP 的关键在于？",
+      "options": [
+        "以实时数据驱动物料控制",
+        "每月才更新一次",
+        "仅手工计算",
+        "不考量库存"
+      ],
+      "answer": "以实时数据驱动物料控制",
+      "points": 10
+    },
+    {
+      "id": "ch4-q12",
+      "type": "fill",
+      "unitId": "sc-4-2",
+      "concept": "约束理论",
+      "question": "约束理论（TOC）强调要识别并改善系统中的_____（瓶颈），以提升整体产出。",
+      "answer": "约束",
+      "points": 10
+    }
+  ]
+}

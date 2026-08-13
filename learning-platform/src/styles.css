@@ -627,3 +627,61 @@ p { margin: 8px 0; }
 @media (max-width: 760px) {
   .portrait-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- 阶段考试 ---------- */
+.badge { background: var(--surface-2); color: var(--text-dim); font-size: 12px; padding: 3px 10px; border-radius: 999px; font-weight: 700; }
+.badge.locked { background: rgba(255, 255, 255, 0.04); color: var(--text-faint); }
+
+.stage { max-width: 920px; margin: 0 auto; padding: 14px 4px 60px; }
+.exam-intro { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.exam-intro h1 { margin: 10px 0 6px; font-size: 26px; }
+.exam-intro .desc { color: var(--text-dim); margin-bottom: 18px; }
+.exam-meta { list-style: none; padding: 0; margin: 0 0 18px; display: flex; flex-direction: column; gap: 8px; }
+.exam-meta li { color: var(--text-dim); font-size: 14px; padding-left: 18px; position: relative; }
+.exam-meta li::before { content: "•"; color: var(--accent); position: absolute; left: 0; }
+.exam-meta b { color: var(--text); }
+.exam-badge.passed { display: inline-block; background: var(--ok-soft); color: var(--ok); font-weight: 800; padding: 8px 16px; border-radius: 999px; margin-bottom: 14px; }
+.exam-warn { background: var(--warn-soft); color: var(--warn); border: 1px solid rgba(255, 207, 107, 0.25); padding: 10px 14px; border-radius: 12px; font-size: 13.5px; margin-bottom: 16px; }
+.exam-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+
+.exam-modal .exam-paper { font-size: 12.5px; color: var(--text-faint); }
+.exam-paper { font-size: 12.5px; color: var(--text-faint); }
+
+.exam-result { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.exam-result.pass { border-color: rgba(127, 225, 196, 0.35); }
+.exam-result.fail { border-color: rgba(255, 122, 133, 0.35); }
+.exam-score { font-size: 56px; font-weight: 900; line-height: 1; margin: 10px 0 6px; }
+.exam-score span { font-size: 24px; font-weight: 700; margin-left: 2px; }
+.exam-score.up { color: var(--mint); }
+.exam-score.down { color: var(--danger); }
+.exam-verdict { color: var(--text-dim); margin-bottom: 6px; }
+.exam-result .exam-paper { margin-bottom: 18px; }
+
+.exam-review { margin-top: 8px; }
+.exam-review h3, .exam-weak h3 { font-size: 15px; margin: 18px 0 10px; color: var(--text); }
+.rv { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+.rv.ok { border-left: 3px solid var(--mint); }
+.rv.no { border-left: 3px solid var(--danger); }
+.rv-title { display: flex; gap: 8px; align-items: baseline; font-size: 14px; }
+.rv-idx { color: var(--accent); font-weight: 800; }
+.rv-tag { margin-left: auto; font-weight: 700; font-size: 12.5px; }
+.rv.ok .rv-tag { color: var(--mint); }
+.rv.no .rv-tag { color: var(--danger); }
+.rv-detail { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px; font-size: 13px; color: var(--text-dim); }
+.rv-correct { color: var(--mint); font-weight: 600; }
+.rv-link { display: inline-block; margin-top: 6px; font-size: 13px; color: var(--accent); }
+
+.exam-weak .weak-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.weak-chip { background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 6px 12px; font-size: 13px; color: var(--text); text-decoration: none; }
+.weak-chip:hover { border-color: var(--border-strong); }
+
+.exam-card { cursor: pointer; padding: 16px 18px; border-style: dashed; border-color: var(--accent); }
+.exam-card.done { border-style: solid; }
+.exam-card:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: var(--shadow-soft); }
+
+.exam-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.exam-chip { display: flex; flex-direction: column; gap: 2px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; text-decoration: none; min-width: 120px; }
+.exam-chip.done { border-color: rgba(127, 225, 196, 0.4); }
+.exam-chip-t { font-size: 13px; color: var(--text); }
+.exam-chip-s { font-size: 12px; color: var(--text-faint); }
+.exam-chip.done .exam-chip-s { color: var(--mint); font-weight: 700; }

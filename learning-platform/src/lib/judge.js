@@ -15,7 +15,8 @@ function normalizeExpected(type, options, expected) {
   const exp = String(expected ?? '').trim()
   if (options && options.length) {
     if (/^[A-Da-d]$/.test(exp)) return { mode: 'letter', val: exp.toUpperCase() }
-    const idx = options.findIndex((o) => stripOpt(o) === exp)
+    const expStripped = stripOpt(exp)
+    const idx = options.findIndex((o) => stripOpt(o) === expStripped)
     if (idx >= 0) return { mode: 'index', val: idx }
   }
   return { mode: 'text', val: exp }
