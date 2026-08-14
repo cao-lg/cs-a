@@ -230,7 +230,7 @@ def sub_to_blocks(sub):
     return blocks
 
 # ---------- 5. 评测生成 ----------
-def trunc(s, n=46):
+def trunc(s, n=32):
     s = s.strip()
     return s if len(s) <= n else s[:n] + "…"
 

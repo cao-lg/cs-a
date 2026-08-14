@@ -748,3 +748,57 @@ p { margin: 8px 0; }
   .admin-row { grid-template-columns: 1fr 0.6fr; }
   .admin-row .ar-detail { grid-column: 1 / -1; }
 }
+
+/* ---------- 首页项目网格（独立课程网站） ---------- */
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.chapter-card {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 20px; color: inherit;
+}
+.chapter-card:hover { transform: translateY(-4px); border-color: rgba(255,138,91,.4); box-shadow: var(--shadow); }
+.chapter-card.done { border-color: rgba(95,214,160,.45); }
+.chapter-card.active { border-color: rgba(255,138,91,.55); }
+.chapter-head {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+}
+.chapter-num {
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 999px;
+}
+.chapter-card h3 {
+  font-size: 17px; margin: 0; line-height: 1.4; min-height: 2.8em;
+}
+.chapter-progress { margin-top: auto; }
+.chapter-bar {
+  height: 5px; border-radius: 999px; background: var(--surface-2); overflow: hidden; margin-bottom: 8px;
+}
+.chapter-fill {
+  height: 100%; border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width .6s var(--ease);
+}
+.chapter-card.done .chapter-fill { background: var(--ok); }
+
+/* ---------- 选项换行修复：长文本完整显示，不被截断 ---------- */
+.opt {
+  align-items: flex-start;
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  line-height: 1.55;
+}
+.opt input[type="radio"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+@media (max-width: 760px) {
+  .modal { max-width: 96vw; }
+  .assess-modal .modal-body { padding: 14px 16px; }
+  .opt { padding: 11px 12px; font-size: 14px; }
+  .q-title { font-size: 15px; }
+}

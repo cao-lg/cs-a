@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { getCourse, getAllExamResults } from '../lib/api'
 import { getStoredAssessment } from '../lib/storage'
 import { Reveal, Stagger, StaggerItem } from './motion'
@@ -7,6 +7,7 @@ import GrowthJourney from './GrowthJourney'
 
 export default function CourseDetail() {
   const { courseId } = useParams()
+  const location = useLocation()
   const [course, setCourse] = useState(null)
   const [status, setStatus] = useState({})
   const [exams, setExams] = useState({})
@@ -26,6 +27,19 @@ export default function CourseDetail() {
     })()
   }, [courseId])
 
+  // 从首页项目卡片进入时，自动滚动到对应章节
+  useEffect(() => {
+    if (!course) return
+    const hash = location.hash.replace('#', '')
+    if (!hash) return
+    const el = document.getElementById(hash)
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 120)
+    }
+  }, [course, location.hash])
+
   if (!course) return <div className="state">加载中…</div>
 
   return (
@@ -42,7 +56,7 @@ export default function CourseDetail() {
         const chapterDone = ch.units.every((u) => status[u.id]?.pre && status[u.id]?.post)
         const examRec = exams[ch.id] || {}
         return (
-          <section key={ch.id} className="chapter">
+          <section key={ch.id} id={ch.id} className="chapter">
             <h2>{ch.title}</h2>
             <Stagger className="units">
               {ch.units.map((u) => {

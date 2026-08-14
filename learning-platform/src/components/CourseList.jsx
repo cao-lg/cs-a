@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { listCourses, getCourse } from '../lib/api'
-import { Reveal, Stagger, StaggerItem, Magnetic, Tilt } from './motion'
+import { getStoredAssessment } from '../lib/storage'
+import { Reveal, Stagger, StaggerItem, Magnetic } from './motion'
 
 const FLOW = [
   { icon: '📋', label: '单元前测 · 摸清起点' },
@@ -11,44 +12,80 @@ const FLOW = [
 ]
 
 export default function CourseList() {
-  const [courses, setCourses] = useState([])
+  const [course, setCourse] = useState(null)
+  const [status, setStatus] = useState({})
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     ;(async () => {
       const ids = await listCourses()
-      const list = await Promise.all(ids.map((id) => getCourse(id)))
-      setCourses(list)
+      // 独立网站：取当前唯一课程（supply-chain）
+      const firstId = ids[0] || 'supply-chain'
+      const c = await getCourse(firstId)
+      setCourse(c)
+      // 加载每个单元的完成状态
+      const s = {}
+      for (const ch of c.chapters) {
+        for (const u of ch.units) {
+          s[u.id] = await getStoredAssessment(u.id)
+        }
+      }
+      setStatus(s)
       setLoading(false)
     })()
   }, [])
 
   if (loading) return <div className="state">正在点亮学习地图…</div>
+  if (!course) return <div className="state">课程数据加载失败</div>
+
+  const totalUnits = course.chapters.reduce((n, ch) => n + ch.units.length, 0)
+  const doneUnits = course.chapters.reduce((n, ch) => {
+    return n + ch.units.filter((u) => status[u.id]?.pre && status[u.id]?.post).length
+  }, 0)
+  const firstUnit = course.chapters[0]?.units[0]
+
+  function chapterProgress(ch) {
+    const total = ch.units.length
+    const done = ch.units.filter((u) => status[u.id]?.pre && status[u.id]?.post).length
+    return { done, total, pct: total ? Math.round((done / total) * 100) : 0 }
+  }
 
   return (
     <div className="course-list">
       <section className="hero">
         <div>
-          <span className="hero-badge">✦ 自适应学习闭环</span>
+          <span className="hero-badge">✦ {course.title}</span>
           <h1>
-            让每一单元<span className="grad"> 学得有痕</span>
-            <br />练得有趣
+            跟随小北，把供应链知识
+            <br />
+            <span className="grad">变成一场成长旅程</span>
           </h1>
-          <p className="lead">
-            先测起点，再带着情境去探索，最后用后测看见自己的成长。把枯燥的知识点，变成一场边玩边记的旅程。
-          </p>
+          <p className="lead">{course.description}</p>
           <div className="hero-cta">
-            <Magnetic>
-              <Link to={`/course/${courses[0]?.id}`} className="btn primary">
-                开始第一个单元 →
-              </Link>
-            </Magnetic>
-            <Link to="/profile" className="btn">查看我的进步</Link>
+            {firstUnit && (
+              <Magnetic>
+                <Link to={`/learn/${course.id}/${firstUnit.id}`} className="btn primary">
+                  开始学习 →
+                </Link>
+              </Magnetic>
+            )}
+            <Link to="/profile" className="btn">
+              查看我的进步
+            </Link>
           </div>
           <div className="hero-stats">
-            <div className="hs"><b>{courses.length}</b><span>门课程</span></div>
-            <div className="hs"><b>{courses.reduce((n, c) => n + c.chapters.reduce((m, ch) => m + ch.units.length, 0), 0)}</b><span>学习单元</span></div>
-            <div className="hs"><b>3</b><span>互动环节</span></div>
+            <div className="hs">
+              <b>{course.chapters.length}</b>
+              <span>个项目</span>
+            </div>
+            <div className="hs">
+              <b>{totalUnits}</b>
+              <span>学习单元</span>
+            </div>
+            <div className="hs">
+              <b>{doneUnits}</b>
+              <span>已完成单元</span>
+            </div>
           </div>
         </div>
 
@@ -71,26 +108,37 @@ export default function CourseList() {
       </section>
 
       <div className="section-head">
-        <h2>精选课程</h2>
-        <span className="sub">挑一门，开始你的探索</span>
+        <h2>全部项目</h2>
+        <span className="sub">7 大项目，从基础认知到 AI 前沿</span>
       </div>
 
-      <Stagger className="grid" mount>
-        {courses.map((c) => (
-          <StaggerItem key={c.id}>
-            <Tilt className="card course-card" max={5}>
-              <Link to={`/course/${c.id}`} style={{ color: 'inherit', display: 'block' }}>
-                <div className="course-thumb" />
-                <h3>{c.title}</h3>
-                <p>{c.description}</p>
-                <div className="cc-foot">
-                  <span className="meta">{c.chapters.length} 章 · {c.chapters.reduce((n, ch) => n + ch.units.length, 0)} 单元</span>
-                  <span className="cc-arrow">→</span>
+      <Stagger className="chapters-grid" mount>
+        {course.chapters.map((ch) => {
+          const { done, total, pct } = chapterProgress(ch)
+          return (
+            <StaggerItem key={ch.id}>
+              <Link
+                to={`/course/${course.id}#${ch.id}`}
+                className={`card chapter-card ${pct === 100 ? 'done' : pct > 0 ? 'active' : ''}`}
+              >
+                <div className="chapter-head">
+                  <span className="chapter-num">项目 {ch.order}</span>
+                  {pct === 100 && <span className="badge done">✓ 已完成</span>}
+                  {pct > 0 && pct < 100 && <span className="badge">进行中 {pct}%</span>}
+                </div>
+                <h3>{ch.title.replace(/^项目[一二三四五六七八九十\d]+\s*/, '')}</h3>
+                <div className="chapter-progress">
+                  <div className="chapter-bar">
+                    <div className="chapter-fill" style={{ width: `${pct}%` }} />
+                  </div>
+                  <span className="meta">
+                    {done}/{total} 单元 · {ch.units.length} 个学习单元
+                  </span>
                 </div>
               </Link>
-            </Tilt>
-          </StaggerItem>
-        ))}
+            </StaggerItem>
+          )
+        })}
       </Stagger>
     </div>
   )
