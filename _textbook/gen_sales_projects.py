@@ -73,6 +73,15 @@ def clean_title(t):
     t = re.sub(r'^\s*\d+[\.\、]\s*', '', t)
     return t.strip()
 
+def short_title(t, n=18):
+    """精简标题：截到第一个句号/逗号/分号前，最长 n 字，用于 focus/question，避免堆整段定义。"""
+    t = clean_title(t)
+    for sep in ("。", "；", "：", "，", ";"):
+        i = t.find(sep)
+        if 0 < i < n:
+            return t[:i]
+    return t[:n]
+
 # ---------- 句子 / 关键句 ----------
 def split_sentences(text):
     return [x.strip() for x in re.split(r"[。！？\n;；]", text) if x.strip()]
@@ -107,6 +116,9 @@ def is_junk_para(p):
     if not p or not p.strip():
         return True
     if JUNK_PARA_RE.match(p):
+        return True
+    # 纯引用废句（"下面以表5-3中数据为例进行数据分析""参见表6-2"），短且无知识点
+    if re.search(r"表\d+[\-—]\d+", p) and len(p.strip()) < 45:
         return True
     # 只有emoji或特殊符号的也丢弃
     if re.match(r"^[✅✓✔⭐\s]+$", p):
@@ -176,8 +188,10 @@ def structure_paras(paras):
             i += 1
             continue
 
-        # 普通段落
-        out.append(p)
+        # 普通段落：切掉句尾的表格引用引导语 / 列表引导尾巴（"……如表2-2：" / "……核心指标包括："），保留前半句知识点
+        cleaned = re.sub(r"[\s，,。.：:；;]*表\d+[\-—]\d+[\s，,。.：:；;]*$", "", p)
+        cleaned = re.sub(r"[\s，,。.]*?(核心指标包括|核心功能包括|实现以下目标|主要包括|具体包括|具体表现为|主要体现在|体现在|包括|包括：)[:：]?$", "", cleaned)
+        out.append(cleaned)
         i += 1
 
     return "\n\n".join(out)
@@ -190,20 +204,28 @@ def key_sentences(blocks):
             sources.append(b["md"])
         elif "sub" in b:
             sources.extend(b["sub"].get("paras", []))
-        for src in sources:
-            for sent in split_sentences(src):
-                if is_junk(sent): continue
-                s = sent.strip()
-                # 表格片段、层级标题、编号项、列表项、表格引用句、营销话 不能当关键句/选项
-                if "|" in s or "#" in s or "如表" in s or ("汇总" in s and "指标" in s): continue
-                if SECTION_HEAD_RE.match(s) or SECTION_HEAD_NUM_RE.match(s): continue
-                if LIST_ITEM_RE.match(s): continue
-                if s.startswith("-"): continue
-                if re.match(r"^[（(]\d+[)）]", s): continue
-                if is_junk_para(s): continue
-                if not any(k in s for k in DOMAIN): continue
-                if s not in seen:
-                    seen.add(s); out.append(s)
+            for src in sources:
+                for sent in split_sentences(src):
+                    if is_junk(sent): continue
+                    s = sent.strip()
+                    # 表格片段、层级标题、编号项、列表项、表格引用句、营销话 不能当关键句/选项
+                    if "|" in s or "#" in s or "如表" in s or ("汇总" in s and "指标" in s): continue
+                    if SECTION_HEAD_RE.match(s) or SECTION_HEAD_NUM_RE.match(s): continue
+                    if LIST_ITEM_RE.match(s): continue
+                    if s.startswith("-"): continue
+                    if re.match(r"^[（(]\d+[)）]", s): continue
+                    # 表格编号引用残句（"如需要根据表5-2..."）不要
+                    if re.search(r"表\d+[\-—]\d+", s): continue
+                    # 填空残句（"但通常情况下，并不建议删除"）不要
+                    if re.match(r"^但(通常)?(情况下)?[，,]", s) or "情况下，并不建议" in s: continue
+                    # 思政/职业理念腔（"作为…从业者""数智赋能""乡村振兴"等）不是知识点，排除
+                    if re.search(r"作为.{0,8}从业者|数智赋能|匠心守护|乡村振兴|职业理念|社会责任|民生|课程思政", s): continue
+                    # 操作手册字段说明段（"本项目提供名为…xlsx""工作表""核心字段如下"）排除
+                    if re.search(r"本项目提供名为|Excel文件|工作表|核心字段如下|字段如下", s): continue
+                    if is_junk_para(s): continue
+                    if not any(k in s for k in DOMAIN): continue
+                    if s not in seen:
+                        seen.add(s); out.append(s)
     return out
 
 # ---------- 表格 ----------
@@ -225,9 +247,9 @@ def trunc(s, n=34):
     return s if len(s) <= n else s[:n] + "…"
 
 def clean_option(o):
-    """选项必须干净：不能是表格片段、不能过长、首尾去标点。"""
+    """选项必须干净：不能是表格片段、markdown 标题、填空式残句、过长过短。"""
     o = o.strip()
-    if not o or "|" in o or "#" in o: return None
+    if not o or "|" in o: return None
     # 把换行/多个空格统一处理
     o = o.replace("\n", " ")
     o = re.sub(r"\s+", " ", o)
@@ -236,9 +258,18 @@ def clean_option(o):
     # 去掉首尾多余标点和编号
     o = re.sub(r"^[（(]?\d+[)）]?[\.．、]?\s*", "", o)
     o = o.strip()
-    # 去掉不完整的尾部引号/标点：如果开头有左引号但结尾没右引号，保持原样；否则清理
+    # 过滤掉 markdown 标题开头的垃圾（如 "### 无价值数据 指..."）
+    if o.startswith("#"):
+        return None
+    # 过滤掉 "但通常情况下，并不建议删除" 这类填空残句
+    if re.match(r"^但(通常)?(情况下)?[，,]", o) or "情况下，并不建议" in o:
+        return None
+    # 过滤掉表格编号引用残句（"如需要根据表5-2..."）
+    if re.search(r"表\d+[\-—]\d+", o):
+        return None
+    # 去掉不完整的尾部引号/标点
     if o.startswith(("“", "\"", "「", "《")) and not o.endswith(("”", "\"", "」", "》")):
-        pass  # 保持不完整引用，避免把选项截成怪句
+        pass
     else:
         o = o.rstrip("，,；;。. ")
     # 小标题形式的选项太浅，不要
@@ -250,8 +281,28 @@ def clean_option(o):
 
 def build_mcq(correct, others, seed, topic=None):
     rnd = random.Random(seed)
-    correct_t = clean_option(correct) or trunc(correct)
-    keys = set(k for k in DOMAIN if k in correct)
+    # 先过滤 others，挑一个干净的作正确答案候选池
+    clean_others = [clean_option(o) for o in others]
+    clean_others = [o for o in clean_others if o and 10 <= len(o) <= 75]
+    # 优先选 20-60 字的关键句作正确答案，避免被截断成 "…"
+    cand_correct = correct if isinstance(correct, str) else (correct[0] if correct else "")
+    if isinstance(correct, (list, tuple)):
+        sized = [c for c in correct if 20 <= len(c) <= 60]
+        cand_correct = sized[0] if sized else correct[0]
+    elif not (20 <= len(cand_correct) <= 60):
+        sized = [o for o in clean_others if 20 <= len(o) <= 60]
+        if sized:
+            cand_correct = sized[0]
+    correct_t = clean_option(cand_correct)
+    # 如果正确答案也脏（含 #/换行/碎片），从干净候选池里换一个，绝不用 trunc 兜底污染
+    if not correct_t and clean_others:
+        correct_t = rnd.choice(clean_others)
+    if not correct_t:
+        # 实在没有干净句，返回一个安全的占位（不应发生）
+        return {"type":"multiple_choice","question":(f"关于「{topic}」，下列说法正确的是？" if topic else "学习本单元后，下列说法正确的是？"),
+                "options":["选项数据暂缺，请稍后重试","该选项把相关关系误当成了因果关系","这是把范围说大了，并非本单元讨论的重点","这一说法与数据驱动的思路正好相反"],
+                "answer":"选项数据暂缺，请稍后重试","points":10}
+    keys = set(k for k in DOMAIN if k in correct_t)
     pool = []
     seen_opts = {correct_t}
     for o in others:
@@ -405,6 +456,7 @@ def gen_unit_md(cid, task, sec, uid, is_single, unit_title):
         objs = [unit_title]
     objs = objs[:6]
     focusq = FOCUSQ.get(task["id"], f"为什么「{task_title}」是这一步绕不开的？")
+    short_t = short_title(unit_title)
 
     L = []
     L.append(f"# {esc_attr(unit_title)}")
@@ -417,7 +469,7 @@ def gen_unit_md(cid, task, sec, uid, is_single, unit_title):
     # 场景剧
     setup = f"{story_line} 这周的真实任务就是：{task_title}。"
     line = f"别把它当课本。做完这个任务，你要能独立回答一个问题——{focusq}"
-    focus = f"{unit_title}：从现象到决策"
+    focus = f"{short_t}：从现象到决策"
     thought = gen_thought(unit_title, focusq, hash(uid) & 0xffff)
     L.append(":::scene{")
     L.append(f'  setup="{esc_attr(setup)}"')
@@ -443,7 +495,7 @@ def gen_unit_md(cid, task, sec, uid, is_single, unit_title):
             L += render_sub(b["sub"])
         # 在第一个/第三个块后注入检查点
         if cp_count == 0 and bi == 0 and sents:
-            q = build_mcq(sents[0], sents, seed=hash(uid+"cp1") & 0xffff, topic=unit_title)
+            q = build_mcq(sents[0], sents, seed=hash(uid+"cp1") & 0xffff, topic=short_t)
             L.append(":::checkpoint{")
             L.append('  type="multiple_choice"')
             L.append(f'  scenario="{esc_attr(random.Random(hash(uid+"cp1")&0xffff).choice(CP1_SCEN))}"')
@@ -457,7 +509,7 @@ def gen_unit_md(cid, task, sec, uid, is_single, unit_title):
             L.append("")
             cp_count += 1
         elif cp_count == 1 and bi >= 2 and len(sents) > 2:
-            q = build_mcq(sents[2], sents, seed=hash(uid+"cp2") & 0xffff, topic=unit_title)
+            q = build_mcq(sents[2], sents, seed=hash(uid+"cp2") & 0xffff, topic=short_t)
             L.append(":::checkpoint{")
             L.append('  type="multiple_choice"')
             L.append(f'  scenario="{esc_attr(random.Random(hash(uid+"cp2")&0xffff).choice(CP2_SCEN))}"')
@@ -524,7 +576,7 @@ def gen_unit_md(cid, task, sec, uid, is_single, unit_title):
         L.append(f'  unlock="{esc_attr("这一关过了，这个任务的硬本事你就拿到了。")}"')
         L.append("}")
     else:
-        q = build_mcq(sents[-1] if sents else unit_title, sents or [unit_title], seed=hash(uid+"ch") & 0xffff, topic=unit_title)
+        q = build_mcq(sents[-1] if sents else unit_title, sents or [unit_title], seed=hash(uid+"ch") & 0xffff, topic=short_t)
         L.append(":::challenge{")
         L.append(f'  id="{uid}_c1"')
         L.append('  type="multiple_choice"')
