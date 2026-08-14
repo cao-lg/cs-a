@@ -11,6 +11,7 @@ import Explore from './Explore'
 import Challenge from './Challenge'
 import AssessmentModal from './AssessmentModal'
 import Scene from './Scene'
+import CourseShell from './CourseShell'
 import { Reveal, Magnetic, motion, AnimatePresence } from './motion'
 
 // 兼容两种测验数据结构：{ items: [...] }（u41）或直接 [... ]（u42~u45）
@@ -29,6 +30,7 @@ export default function LearnUnit() {
   const [blocks, setBlocks] = useState([])
   const [assessment, setAssessment] = useState({ pre: [], post: [] })
   const [status, setStatus] = useState({ hasPre: false, hasPost: false })
+  const [allStatus, setAllStatus] = useState({})
   const [ready, setReady] = useState(false)
   const [showPre, setShowPre] = useState(false)
   const [showPost, setShowPost] = useState(false)
@@ -41,6 +43,14 @@ export default function LearnUnit() {
       const md = await getUnitContent(u.path)
       const a = await getAssessment(unitId)
       const st = await getAssessmentStatus(unitId)
+      // 为左侧目录加载全部单元进度
+      const map = {}
+      for (const ch of c.chapters) {
+        for (const x of ch.units) {
+          map[x.id] = await getStoredAssessment(x.id)
+        }
+      }
+      setAllStatus(map)
       setCourse(c)
       setUnit(u)
       setBlocks(parseDirectives(md))
@@ -123,7 +133,8 @@ export default function LearnUnit() {
   const nextUnit = curIdx >= 0 && curIdx < flatUnits.length - 1 ? flatUnits[curIdx + 1] : null
 
   return (
-    <div className="learn">
+    <CourseShell course={course} status={allStatus} courseId={courseId} activeUnitId={unitId}>
+      <div className="learn">
       <div className="learn-head">
         <Link to={`/course/${courseId}`} className="back">← {course?.title}</Link>
         <h1>{unit.title}</h1>
@@ -294,6 +305,7 @@ export default function LearnUnit() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </CourseShell>
   )
 }

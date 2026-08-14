@@ -3,7 +3,7 @@ import { useParams, Link, useLocation } from 'react-router-dom'
 import { getCourse, getAllExamResults } from '../lib/api'
 import { getStoredAssessment } from '../lib/storage'
 import { Reveal, Stagger, StaggerItem } from './motion'
-import GrowthJourney from './GrowthJourney'
+import CourseShell from './CourseShell'
 
 export default function CourseDetail() {
   const { courseId } = useParams()
@@ -43,16 +43,15 @@ export default function CourseDetail() {
   if (!course) return <div className="state">加载中…</div>
 
   return (
-    <div className="course-detail">
-      <Reveal>
-        <Link to="/" className="back">← 返回课程</Link>
-        <h1>{course.title}</h1>
-        <p className="desc">{course.description}</p>
-      </Reveal>
+    <CourseShell course={course} status={status} courseId={courseId}>
+      <div className="course-detail">
+        <Reveal>
+          <Link to="/" className="back">← 返回课程</Link>
+          <h1>{course.title}</h1>
+          <p className="desc">{course.description}</p>
+        </Reveal>
 
-      <GrowthJourney course={course} status={status} courseId={courseId} />
-
-      {course.chapters.map((ch) => {
+        {course.chapters.map((ch) => {
         const chapterDone = ch.units.every((u) => status[u.id]?.pre && status[u.id]?.post)
         const examRec = exams[ch.id] || {}
         return (
@@ -106,7 +105,8 @@ export default function CourseDetail() {
       })}
 
       <FinalExamCard course={course} status={status} exams={exams} courseId={courseId} />
-    </div>
+      </div>
+    </CourseShell>
   )
 }
 
