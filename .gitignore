@@ -24,3 +24,4 @@ learning-platform/*.png
 
 # ---- Vite temp config files ----
 learning-platform/vite.config.js.timestamp-*.mjs
+sales-platform/
