@@ -94,8 +94,8 @@ export default function CourseDetail() {
                     {examRec.passed
                       ? '点开可换卷重考刷分'
                       : chapterDone
-                      ? '本章单元已学完，来检验掌握度'
-                      : '完成本章全部单元前/后测后解锁'}
+                      ? '本章任务已学完，来检验掌握度'
+                      : '完成本章全部任务前/后测后解锁'}
                   </div>
                 </Link>
               </StaggerItem>
@@ -127,7 +127,7 @@ function FinalExamCard({ course, status, exams, courseId }) {
     tip = '课程已全部学完，建议先逐章通关阶段考试再来挑战'
   } else {
     state = <span className="badge locked">🔒 待解锁</span>
-    tip = '学完全部单元并通关七章阶段考试后开放'
+    tip = '学完全部任务并通关七章阶段考试后开放'
   }
   return (
     <section className="chapter">

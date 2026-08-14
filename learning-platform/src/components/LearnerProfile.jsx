@@ -103,7 +103,7 @@ export default function LearnerProfile() {
     tags.push({ t: '尚未开始诊断', c: 'muted' })
   } else {
     if (preMasteredUnits.length) tags.push({ t: `已掌握型 · 前测满分 ${preMasteredUnits.length} 个`, c: 'ok' })
-    if (negGain.length) tags.push({ t: `退步预警 · ${negGain.length} 个单元后测低于前测`, c: 'bad' })
+    if (negGain.length) tags.push({ t: `退步预警 · ${negGain.length} 个任务后测低于前测`, c: 'bad' })
     if (strong.length && !negGain.length) tags.push({ t: '稳步提升型', c: 'info' })
     if (assessed.length >= 3) {
       const ps = assessed.map((u) => u.postPct)
@@ -170,7 +170,7 @@ export default function LearnerProfile() {
       <Reveal>
         <div className="card portrait-empty">
           <h2>学习画像</h2>
-          <p className="hint">完成几个单元（含前/后测与互动）后，这里会生成你的专属「个人诊断画像」——薄弱知识域、能力雷达、学习风格与下一步建议。</p>
+          <p className="hint">完成几个任务（含前/后测与互动）后，这里会生成你的专属「个人诊断画像」——薄弱知识域、能力雷达、学习风格与下一步建议。</p>
         </div>
       </Reveal>
     )
@@ -184,7 +184,7 @@ export default function LearnerProfile() {
         <div className="portrait-grid">
           <div className="portrait-radar">
             <RadarChart axes={radarAxes} />
-            <div className="portrait-radar-cap">能力雷达（按已学单元均值）</div>
+            <div className="portrait-radar-cap">能力雷达（按已学任务均值）</div>
           </div>
 
           <div className="portrait-side">

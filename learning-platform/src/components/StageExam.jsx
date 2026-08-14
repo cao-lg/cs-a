@@ -112,7 +112,7 @@ export default function StageExam() {
           )}
           {!chapterDone && (
             <div className="exam-warn">
-              ⚠️ 你尚未完成本章全部单元的前/后测，建议先学完再考，效果更佳。
+              ⚠️ 你尚未完成本章全部任务的前/后测，建议先学完再考，效果更佳。
             </div>
           )}
           <div className="exam-actions">
@@ -168,7 +168,7 @@ export default function StageExam() {
                 </div>
                 {!i.correct && i.it.unitId && (
                   <Link className="rv-link" to={`/learn/${courseId}/${i.it.unitId}`}>
-                    回到：{unitTitleMap[i.it.unitId]?.replace(/^单元：/, '') || i.it.unitId} 复习 →
+                    回到：{unitTitleMap[i.it.unitId]?.replace(/^任务：/, '') || i.it.unitId} 复习 →
                   </Link>
                 )}
               </div>
@@ -177,11 +177,11 @@ export default function StageExam() {
 
           {wrongUnits.length > 0 && (
             <div className="exam-weak">
-              <h3>薄弱单元建议复习</h3>
+              <h3>薄弱任务建议复习</h3>
               <div className="weak-chips">
                 {wrongUnits.map((uid) => (
                   <Link key={uid} className="weak-chip" to={`/learn/${courseId}/${uid}`}>
-                    {unitTitleMap[uid]?.replace(/^单元：/, '') || uid}
+                    {unitTitleMap[uid]?.replace(/^任务：/, '') || uid}
                   </Link>
                 ))}
               </div>

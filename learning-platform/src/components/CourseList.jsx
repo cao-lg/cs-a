@@ -5,10 +5,10 @@ import { getStoredAssessment } from '../lib/storage'
 import { Reveal, Stagger, StaggerItem, Magnetic } from './motion'
 
 const FLOW = [
-  { icon: '📋', label: '单元前测 · 摸清起点' },
+  { icon: '📋', label: '任务前测 · 摸清起点' },
   { icon: '📖', label: '情境学习 · 互动检查点' },
   { icon: '🧭', label: '探索 & 挑战 · 点燃好奇' },
-  { icon: '📈', label: '单元后测 · 看见增益' },
+  { icon: '📈', label: '任务后测 · 看见增益' },
 ]
 
 export default function CourseList() {
@@ -80,11 +80,11 @@ export default function CourseList() {
             </div>
             <div className="hs">
               <b>{totalUnits}</b>
-              <span>学习单元</span>
+              <span>学习任务</span>
             </div>
             <div className="hs">
               <b>{doneUnits}</b>
-              <span>已完成单元</span>
+              <span>已完成任务</span>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function CourseList() {
                     <div className="chapter-fill" style={{ width: `${pct}%` }} />
                   </div>
                   <span className="meta">
-                    {done}/{total} 单元 · {ch.units.length} 个学习单元
+                    {done}/{total} 任务 · {ch.units.length} 个学习任务
                   </span>
                 </div>
               </Link>

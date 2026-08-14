@@ -22,7 +22,7 @@ export default function CourseSidebar({ course, status, courseId, activeUnitId, 
             <span style={{ width: pct + '%' }} />
           </div>
           <span className="side-progress-num">
-            {pct}% · {doneCount}/{stages.length} 单元已完成
+            {pct}% · {doneCount}/{stages.length} 任务已完成
           </span>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function CourseSidebar({ course, status, courseId, activeUnitId, 
                 >
                   <span className="growth-dot">{done ? '✓' : idx}</span>
                   <div className="growth-body">
-                    <div className="growth-title">{u.title.replace(/^单元：/, '')}</div>
+                    <div className="growth-title">{u.title.replace(/^任务：/, '')}</div>
                     <div className="growth-meta">
                       <span className={`growth-state ${state}`}>
                         {state === 'done' ? '已完成' : state === 'active' ? '进行中' : '未开始'}

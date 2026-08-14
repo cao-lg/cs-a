@@ -122,11 +122,11 @@ export default function Profile() {
               <Stagger className="stats">
                 <StaggerItem><div className="stat"><b>{fmtMin(todayMs)}</b><span>今日</span></div></StaggerItem>
                 <StaggerItem><div className="stat"><b>{studyDays}</b><span>学习天数</span></div></StaggerItem>
-                <StaggerItem><div className="stat"><b>{Object.keys(unitsMap).length}</b><span>涉及单元</span></div></StaggerItem>
+                <StaggerItem><div className="stat"><b>{Object.keys(unitsMap).length}</b><span>涉及任务</span></div></StaggerItem>
               </Stagger>
               {topUnits.length > 0 && (
                 <div className="time-top">
-                  <div className="time-top-title">耗时最多的单元</div>
+                  <div className="time-top-title">耗时最多的任务</div>
                   {topUnits.map(([uid, ms]) => (
                     <div key={uid} className="time-top-row">
                       <span className="time-top-name">{uid}</span>
@@ -142,17 +142,17 @@ export default function Profile() {
 
       <LearnerProfile />
 
-      <h2>单元掌握度</h2>
+      <h2>任务掌握度</h2>
       {units.length === 0 && (
         <div className="state">
-          还没有完成任何单元，<Link to="/">去学习 →</Link>
+          还没有完成任何任务，<Link to="/">去学习 →</Link>
         </div>
       )}
       <Reveal>
         <table className="mastery">
           <thead>
             <tr>
-              <th>单元</th>
+              <th>任务</th>
               <th>课前</th>
               <th>课后</th>
               <th>增益</th>

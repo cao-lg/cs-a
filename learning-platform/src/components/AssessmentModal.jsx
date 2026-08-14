@@ -67,7 +67,7 @@ export default function AssessmentModal({ title, items, allowSkip, onClose, onSu
                 </div>
               )
             })}
-            {items.length === 0 && <div className="state">本单元暂未配置题目</div>}
+            {items.length === 0 && <div className="state">本任务暂未配置题目</div>}
           </div>
         ) : (
           <div className="modal-body result">

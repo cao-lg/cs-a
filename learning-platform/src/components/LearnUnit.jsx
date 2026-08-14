@@ -237,7 +237,7 @@ export default function LearnUnit() {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-            <h2>本单元学习增益</h2>
+            <h2>本任务学习增益</h2>
             {summary.preMastered ? (
               <>
                 <div className="gain-num mastered">✓ 已掌握</div>
@@ -245,15 +245,15 @@ export default function LearnUnit() {
                   课前 {summary.pre}/{summary.preTotal} → 课后 {summary.post}/{summary.postTotal}
                 </p>
                 <p className="hint">
-                  课前测已是满分，说明本单元对你大都是已知内容。
+                  课前测已是满分，说明本任务对你大都是已知内容。
                 </p>
                 <div className="gain-actions">
                   {nextUnit ? (
                     <Link className="btn ghost" to={`/learn/${courseId}/${nextUnit.id}`}>
-                      下一单元：{nextUnit.title} →
+                      下一任务：{nextUnit.title} →
                     </Link>
                   ) : (
-                    <span className="hint">已是最后一单元 🎉 去「学习画像」看看你的成长</span>
+                    <span className="hint">已是最后一任务 🎉 去「学习画像」看看你的成长</span>
                   )}
                 </div>
               </>
@@ -273,20 +273,20 @@ export default function LearnUnit() {
                       <p className="hint">有效学习！继续保持。</p>
                       {nextUnit && (
                         <Link className="btn ghost" to={`/learn/${courseId}/${nextUnit.id}`}>
-                          下一单元：{nextUnit.title} →
+                          下一任务：{nextUnit.title} →
                         </Link>
                       )}
                     </>
                   ) : summary.gain === 0 ? (
                     <>
-                      <p className="hint">持平，建议复习本单元薄弱点。</p>
+                      <p className="hint">持平，建议复习本任务薄弱点。</p>
                       <button className="btn ghost" onClick={() => { setSummary(null); navigate('/profile') }}>
                         查看错题本 →
                       </button>
                     </>
                   ) : (
                     <>
-                      <p className="hint">提示退步：后测低于前测，建议重做本单元弱项。</p>
+                      <p className="hint">提示退步：后测低于前测，建议重做本任务弱项。</p>
                       <button className="btn ghost" onClick={() => { setSummary(null); setShowPost(true) }}>
                         重做后测 →
                       </button>

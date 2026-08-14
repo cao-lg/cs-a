@@ -113,9 +113,9 @@ function Overview() {
   const cards = [
     { b: d.courseCount, s: '课程数' },
     { b: d.chapters, s: '章节数' },
-    { b: d.units, s: '单元数' },
+    { b: d.units, s: '任务数' },
     { b: `${d.examCount}`, s: '考试数(阶段+结业)' },
-    { b: `${d.completed}/${d.totalUnits}`, s: '已学完单元' },
+    { b: `${d.completed}/${d.totalUnits}`, s: '已学完任务' },
     { b: `${d.passedCh}/${d.chapters}`, s: '阶段考试通关' },
     { b: d.examAttempts, s: '考试总次数' },
     { b: d.streak, s: '当前连续学习(天)' },
@@ -151,13 +151,13 @@ function ContentCheck() {
           const dirs = blocks.filter((b) => b.type === 'directive')
           const ok = dirs.length > 0 && !/\|.{0,3}(\||\n\|){9}/.test(txt) // 无宽表残留
           out.push({
-            name: `单元 ${uid}.md`,
+            name: `任务 ${uid}.md`,
             type: '内容解析',
             ok,
             detail: ok ? `解析通过，情境/互动指令 ${dirs.length} 个` : '解析异常或存在宽表'
           })
         } catch (e) {
-          out.push({ name: `单元 ${uid}.md`, type: '内容解析', ok: false, detail: '读取失败: ' + e.message })
+          out.push({ name: `任务 ${uid}.md`, type: '内容解析', ok: false, detail: '读取失败: ' + e.message })
         }
       }
       // 题库校验
@@ -192,7 +192,7 @@ function ContentCheck() {
   return (
     <section className="admin-sec">
       <h2>🛡️ 内容校验</h2>
-      <p className="hint">校验全部单元情境剧本解析、阶段/结业题库答案命中与抽题合理性。建议每次内容更新后运行一次。</p>
+      <p className="hint">校验全部任务情境剧本解析、阶段/结业题库答案命中与抽题合理性。建议每次内容更新后运行一次。</p>
       <button className="btn" onClick={run} disabled={running}>{running ? '校验中…' : '运行内容校验'}</button>
       {results && (
         <>
@@ -250,9 +250,9 @@ function LearningData() {
     <section className="admin-sec">
       <h2>📈 学习数据（本机）</h2>
       <div className="stat-grid small">
-        <div className="stat"><b>{d.completed}/{d.totalUnits}</b><span>已学完单元</span></div>
+        <div className="stat"><b>{d.completed}/{d.totalUnits}</b><span>已学完任务</span></div>
         <div className="stat"><b>{d.examRows.length}</b><span>已参加考试科目</span></div>
-        <div className="stat"><b>{d.weakCount}</b><span>后测低于 60% 单元</span></div>
+        <div className="stat"><b>{d.weakCount}</b><span>后测低于 60% 任务</span></div>
         <div className="stat"><b>{fmtMin}</b><span>累计学习时长</span></div>
       </div>
       <h3>考试记录</h3>
