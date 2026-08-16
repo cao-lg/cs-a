@@ -1,46 +1,85 @@
 {
   "unitId": "u42-clean",
-  "pre": [
-    {
-      "id": "u42-clean_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：逻辑错误数据清洗",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 矛盾（销量与销售额互相打架）",
-          "B. 只是显示格式问题，无需处理",
-          "C. 完全正常，订单本就这样",
-          "D. 一定是重复单"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u42_pre1",
+        "type": "multiple_choice",
+        "question": "你扫到一笔订单：金额为 -50，却成交了 3 件商品。凭直觉，这笔数据最像什么？",
+        "options": ["正常的促销折扣", "明显有问题的数据（不合逻辑）", "系统显示错误不用管", "一定是重复单"],
+        "answer": "明显有问题的数据（不合逻辑）",
+        "points": 10
+      },
+      {
+        "id": "u42_pre2",
+        "type": "multiple_choice",
+        "question": "另一笔数据：销量为 0，销售额却是 9999。你第一感觉是？",
+        "options": ["很正常，大单都这样", "前后对不上，像是矛盾", "只是显示格式问题", "肯定是重复记录"],
+        "answer": "前后对不上，像是矛盾",
+        "points": 10
+      },
+      {
+        "id": "u42_pre3",
+        "type": "multiple_choice",
+        "question": "要拿一张订单表去对账前，你最可能先做什么？",
+        "options": ["直接拿去对账", "先扫一遍异常再分析", "只看总行数", "随手删几行"],
+        "answer": "先扫一遍异常再分析",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u42-clean_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "矛盾"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u42_post1",
+        "type": "multiple_choice",
+        "question": "关于三类逻辑错误的判断标准，下列说法正确的是？",
+        "options": ["不合理=单字段就离谱（如金额-50、年龄256）", "矛盾=单字段就离谱", "违规=跨字段打架", "三者判断标准完全一样"],
+        "answer": "不合理=单字段就离谱（如金额-50、年龄256）",
+        "points": 10
+      },
+      {
+        "id": "u42_post2",
+        "type": "fill",
+        "question": "一条记录“销量为 0 但销售额为 9999”，属于 ___ 错误（不合理/矛盾/违规）。",
+        "answer": "矛盾",
+        "points": 10
+      },
+      {
+        "id": "u42_post3",
+        "type": "fill",
+        "question": "一条记录“年龄为 256 岁”，属于 ___ 错误（不合理/矛盾/违规）。",
+        "answer": "不合理",
+        "points": 10
+      },
+      {
+        "id": "u42_post4",
+        "type": "multiple_choice",
+        "question": "一张表同时混着重复单、负金额、销量对不上的行，按黄金顺序第一步该先做？",
+        "options": ["范围校验查不合理", "去重（按主键删重复记录）", "一致性校验查矛盾", "直接删除所有异常行"],
+        "answer": "去重（按主键删重复记录）",
+        "points": 10
+      },
+      {
+        "id": "u42_post5",
+        "type": "multiple_choice",
+        "question": "订单 A003：销量 5，销售额 -250，应判定为？",
+        "options": ["仅不合理", "仅违规", "矛盾 / 不合理（金额为负）", "正常"],
+        "answer": "矛盾 / 不合理（金额为负）",
+        "points": 10
+      },
+      {
+        "id": "u42_post6",
+        "type": "multiple_choice",
+        "question": "关于清洗中的“标注”做法，正确的是？",
+        "options": ["直接删除异常行", "给行打错误类型标签，先不删", "只修改列名", "忽略不计"],
+        "answer": "给行打错误类型标签，先不删",
+        "points": 10
       }
-    },
-    {
-      "id": "u42-clean_q2",
-      "type": "multiple_choice",
-      "title": "课后测：清洗顺序",
-      "instruction": "选最合理的一步",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 先去重，再查不合理，最后查矛盾/违规",
-          "B. 直接外推预测",
-          "C. 删除所有带负值的行",
-          "D. 只改列名"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

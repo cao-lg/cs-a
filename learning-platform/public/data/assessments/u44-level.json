@@ -1,34 +1,84 @@
 {
   "unitId": "u44-level",
-  "pre": [
-    {
-      "id": "u44_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：水平序列最适合哪种预测思路？",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "B",
-        "options": ["A. 长期趋势外推", "B. 围绕稳定均值平滑", "C. 季节指数调整"]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u44-level_pre1",
+        "type": "multiple_choice",
+        "question": "一串销量数据没有明显上升下降，只是绕着一个均值上下晃。凭直觉，预测下期用哪种思路更稳？",
+        "options": ["长期趋势外推", "围绕稳定均值做平滑", "季节指数调整", "随便猜"],
+        "answer": "围绕稳定均值做平滑",
+        "points": 10
+      },
+      {
+        "id": "u44-level_pre2",
+        "type": "multiple_choice",
+        "question": "预测下期销量时，你更倾向听“最近一期”还是“很久以前”的实际值？",
+        "options": ["更听最近一期", "只信最早的数据", "全部一视同仁最好", "随机挑"],
+        "answer": "更听最近一期",
+        "points": 10
+      },
+      {
+        "id": "u44-level_pre3",
+        "type": "multiple_choice",
+        "question": "突然来了一个大促峰值，直接拿它算下期预测，你担心？",
+        "options": ["很准，不用管", "会被这个峰值拉偏", "会自动修正", "完全无影响"],
+        "answer": "会被这个峰值拉偏",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u44_q1",
-      "type": "fill",
-      "title": "课后测：移动平均取最近几期？",
-      "instruction": "填窗口大小的符号",
-      "testConfig": { "expected": "N" }
-    },
-    {
-      "id": "u44_q2",
-      "type": "multiple_choice",
-      "title": "课后测：α 越大说明？",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": ["A. 越看重近期", "B. 越平滑滞后", "C. 越接近均值"]
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u44-level_post1",
+        "type": "fill",
+        "question": "第 t+1 期移动平均预测 = 最近 ___ 期实际值的平均（填窗口大小符号）。",
+        "answer": "N",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post2",
+        "type": "fill",
+        "question": "指数平滑预测 = α × 本期实际值 + (1−α) × ___（填含义）。",
+        "answer": "上期预测值",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post3",
+        "type": "fill",
+        "question": "最近 3 期销量 [120, 130, 140]，下期移动平均预测值是 ___（保留整数）。",
+        "answer": "130",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post4",
+        "type": "multiple_choice",
+        "question": "指数平滑里平滑系数 α 越大，说明？",
+        "options": ["越看重最近一期", "越平滑、越滞后", "越接近均值", "跟近期无关"],
+        "answer": "越看重最近一期",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post5",
+        "type": "multiple_choice",
+        "question": "关于移动平均与指数平滑的局限，下列说法正确的是？",
+        "options": ["都只适合短期，大促峰值会把它们拉偏", "移动平均永远更准", "指数平滑完全不受峰值影响", "只有指数平滑适合短期"],
+        "answer": "都只适合短期，大促峰值会把它们拉偏",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post6",
+        "type": "multiple_choice",
+        "question": "比较两种水平预测法的好坏，通常用哪个误差指标？",
+        "options": ["MAE / MAPE 比较选误差小的", "只看 R²", "直接外推", "不需要比较"],
+        "answer": "MAE / MAPE 比较选误差小的",
+        "points": 10
       }
-    }
-  ]
+    ]
+  }
 }

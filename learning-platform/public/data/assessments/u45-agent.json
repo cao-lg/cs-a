@@ -1,46 +1,85 @@
 {
   "unitId": "u45-agent",
-  "pre": [
-    {
-      "id": "u45-agent_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：智能体综合预测",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 先分类序列，再选模型",
-          "B. 直接给一个大数",
-          "C. 只做数据清洗",
-          "D. 随机预测"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u45-agent_pre1",
+        "type": "multiple_choice",
+        "question": "让智能体帮你做销售预测，你最希望它先做什么？",
+        "options": ["直接甩一个预测数", "先说清依据和用了什么模型，再给数", "只给备货量", "随便预测"],
+        "answer": "先说清依据和用了什么模型，再给数",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_pre2",
+        "type": "multiple_choice",
+        "question": "一串数据平稳、绕均值波动，你直觉它该配哪类预测模型？",
+        "options": ["水平模型", "季节模型", "趋势模型", "随机模型"],
+        "answer": "水平模型",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_pre3",
+        "type": "multiple_choice",
+        "question": "智能体只丢给你一句“建议备货 500 件”，没说任何依据，你敢签字采纳吗？",
+        "options": ["敢，有数字就行", "不敢，得先要依据", "随便", "不用管"],
+        "answer": "不敢，得先要依据",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u45-agent_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "水平"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u45-agent_post1",
+        "type": "fill",
+        "question": "无明显趋势与季节、围绕均值波动的序列，应匹配 ___ 模型（水平/季节/趋势）。",
+        "answer": "水平",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post2",
+        "type": "multiple_choice",
+        "question": "关于“再订货点（何时该补货）”，公式正确的是？",
+        "options": ["再订货点 = 日均需求 × 提前期 + 安全库存", "再订货点 = 日均需求 ÷ 提前期", "再订货点 = 安全库存 − 日均需求", "再订货点 = 提前期 × 安全库存"],
+        "answer": "再订货点 = 日均需求 × 提前期 + 安全库存",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post3",
+        "type": "fill",
+        "question": "某品“夏季高、冬季低、逐年平稳”，应匹配 ___ 模型（水平/季节/趋势）。",
+        "answer": "季节",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post4",
+        "type": "multiple_choice",
+        "question": "一条可信的智能体建议，最该包含什么？",
+        "options": ["数据、模型、假设、动作及风险边界", "只要给数字就行", "只需说备多少", "只需说用哪个模型"],
+        "answer": "数据、模型、假设、动作及风险边界",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post5",
+        "type": "multiple_choice",
+        "question": "周期性起伏明显的序列（如空调夏旺冬淡），应匹配哪类模型？",
+        "options": ["季节模型", "水平模型", "趋势模型", "随机模型"],
+        "answer": "季节模型",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post6",
+        "type": "multiple_choice",
+        "question": "智能体做“渠道倾斜”建议时，靠什么定位该往哪投？",
+        "options": ["用对比/交叉分析定位边际 ROI 高的渠道", "只看总销售额", "随机分配", "只看库存"],
+        "answer": "用对比/交叉分析定位边际 ROI 高的渠道",
+        "points": 10
       }
-    },
-    {
-      "id": "u45-agent_q2",
-      "type": "multiple_choice",
-      "title": "课后测：备货公式",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 日均需求 × 提前期 + 安全库存",
-          "B. 仅看历史销售额",
-          "C. 仅看趋势线",
-          "D. 随机拍板"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

@@ -1,46 +1,85 @@
 {
   "unitId": "u43-cross",
-  "pre": [
-    {
-      "id": "u43-cross_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：交叉分析",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 交叉分析（叠维度看真相）",
-          "B. 对比分析（单维度）",
-          "C. 趋势分析",
-          "D. 数据清洗"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u43-cross_pre1",
+        "type": "multiple_choice",
+        "question": "华东区的空调卖得好，能不能说华东区所有品类都好？",
+        "options": ["能，华东整体好", "不能，可能某品类其实在掉", "只看空调就行", "跟品类无关"],
+        "answer": "不能，可能某品类其实在掉",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_pre2",
+        "type": "multiple_choice",
+        "question": "冰淇淋销量和溺水人数夏天同涨，能说明“吃冰淇淋导致溺水”吗？",
+        "options": ["能，数据正相关就是因果", "不能，可能有共同原因（天热）", "完全是巧合无关", "数据一定错了"],
+        "answer": "不能，可能有共同原因（天热）",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_pre3",
+        "type": "multiple_choice",
+        "question": "想知道“华东好，是不是只靠空调”，你最可能怎么做？",
+        "options": ["只看地区总数", "把“地区×品类”叠在一起看", "只看空调品类", "不管了"],
+        "answer": "把“地区×品类”叠在一起看",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u43-cross_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "交叉"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u43-cross_post1",
+        "type": "fill",
+        "question": "同时看“地区 × 品类”的销量，属于 ___ 分析（对比/交叉）。",
+        "answer": "交叉",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_post2",
+        "type": "fill",
+        "question": "展示“地区×品类”的均值高低，最适合用哪种图？填空（热力图/散点图/漏斗图）：___。",
+        "answer": "热力图",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_post3",
+        "type": "multiple_choice",
+        "question": "两渠道各自转化率这个月都涨了，但总转化率却跌了，这最可能是？",
+        "options": ["相关≠因果", "辛普森悖论", "基期陷阱", "百分比陷阱"],
+        "answer": "辛普森悖论",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_post4",
+        "type": "multiple_choice",
+        "question": "展示“地区×品类”的二维均值冷热矩阵，最适合用哪种图？",
+        "options": ["热力图", "散点图", "漏斗图", "子弹图"],
+        "answer": "热力图",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_post5",
+        "type": "multiple_choice",
+        "question": "“会员数”和“复购”正相关，正确态度是？",
+        "options": ["会员导致复购", "别急着说谁导致谁，可能另有原因", "必然因果", "毫无关系"],
+        "answer": "别急着说谁导致谁，可能另有原因",
+        "points": 10
+      },
+      {
+        "id": "u43-cross_post6",
+        "type": "multiple_choice",
+        "question": "交叉分析中“分类 + 子分类”的构成占比，最适合用哪种图？",
+        "options": ["堆叠柱 / 分组柱", "热力图", "漏斗图", "子弹图"],
+        "answer": "堆叠柱 / 分组柱",
+        "points": 10
       }
-    },
-    {
-      "id": "u43-cross_q2",
-      "type": "multiple_choice",
-      "title": "课后测：图表选择",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 热力图（看矩阵冷热）",
-          "B. 散点图（看两变量散布）",
-          "C. 漏斗图（看转化）",
-          "D. 饼图（看占比）"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

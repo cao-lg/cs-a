@@ -1,46 +1,85 @@
 {
   "unitId": "u44-season",
-  "pre": [
-    {
-      "id": "u44-season_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：季节波动预测",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 季节波动（周期性起伏）",
-          "B. 水平波动（绕均值）",
-          "C. 趋势波动（单调）",
-          "D. 随机波动"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u44-season_pre1",
+        "type": "multiple_choice",
+        "question": "月饼只在特定季节爆卖、平时几乎为零，这种波动直觉上属于？",
+        "options": ["季节波动（周期性起伏）", "随机噪音", "长期单调趋势", "水平绕均值"],
+        "answer": "季节波动（周期性起伏）",
+        "points": 10
+      },
+      {
+        "id": "u44-season_pre2",
+        "type": "multiple_choice",
+        "question": "想把“旺季”量化成一个系数、看相对高低，你该用哪个做基准？",
+        "options": ["当年单季值", "常年总平均", "历史最大值", "历史最小值"],
+        "answer": "常年总平均",
+        "points": 10
+      },
+      {
+        "id": "u44-season_pre3",
+        "type": "multiple_choice",
+        "question": "算出月饼的季节指数后，直接按指数倍数备货就够了吗？",
+        "options": ["够，只盯指数就行", "还要乘安全系数、做日历调整", "随便备点", "完全不用备"],
+        "answer": "还要乘安全系数、做日历调整",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u44-season_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "总"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u44-season_post1",
+        "type": "fill",
+        "question": "季节指数 = 该期平均 ÷ ___ 平均（总/局部）。",
+        "answer": "总",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post2",
+        "type": "multiple_choice",
+        "question": "某季同季平均 33、总平均 19，其季节指数约为？",
+        "options": ["0.58", "1.00", "1.74", "19.0"],
+        "answer": "1.74",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post3",
+        "type": "multiple_choice",
+        "question": "季节指数 > 1，说明该期是？",
+        "options": ["淡季", "旺季", "异常值", "平稳期"],
+        "answer": "旺季",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post4",
+        "type": "multiple_choice",
+        "question": "关于用季节指数法备货，下列说法正确的是？",
+        "options": ["备货 = 预测需求 × 安全系数，别只盯指数", "直接按指数倍数备货即可", "只用 1 年数据最稳", "闰年不用做日历调整"],
+        "answer": "备货 = 预测需求 × 安全系数，别只盯指数",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post5",
+        "type": "fill",
+        "question": "用季节指数法，至少需要 ___ 年数据，指数才比较稳（填数字）。",
+        "answer": "3",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post6",
+        "type": "multiple_choice",
+        "question": "季节指数 < 1，说明该期是？",
+        "options": ["旺季", "淡季", "异常值", "平稳期"],
+        "answer": "淡季",
+        "points": 10
       }
-    },
-    {
-      "id": "u44-season_q2",
-      "type": "multiple_choice",
-      "title": "课后测：指数含义",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 旺季（高于常年）",
-          "B. 淡季（低于常年）",
-          "C. 异常值",
-          "D. 平稳期"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

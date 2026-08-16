@@ -1,46 +1,85 @@
 {
   "unitId": "u44-trend",
-  "pre": [
-    {
-      "id": "u44-trend_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：趋势预测",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 趋势预测（长期方向外推）",
-          "B. 季节预测（周期）",
-          "C. 水平预测（绕均值）",
-          "D. 数据清洗"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u44-trend_pre1",
+        "type": "multiple_choice",
+        "question": "数据长期一路向上，老板要你预测明年规模。凭直觉该用什么把方向说清？",
+        "options": ["一条趋势线外推", "先去做数据清洗", "季节指数", "随机估计"],
+        "answer": "一条趋势线外推",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_pre2",
+        "type": "multiple_choice",
+        "question": "拟合出一条趋势线，你靠哪个数判断它靠不靠谱、敢不敢外推？",
+        "options": ["R²", "订单量", "库存量", "客单价"],
+        "answer": "R²",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_pre3",
+        "type": "multiple_choice",
+        "question": "老板要把上升趋势线外推到十年后做长期规划，你直觉上？",
+        "options": ["完全敢信，趋势永远有效", "不太敢，趋势会拐点、外推过度易翻车", "越推越准", "毫无影响"],
+        "answer": "不太敢，趋势会拐点、外推过度易翻车",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u44-trend_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "1"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u44-trend_post1",
+        "type": "fill",
+        "question": "R² 越接近 ___，趋势线拟合越好（填 0 或 1）。",
+        "answer": "1",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post2",
+        "type": "multiple_choice",
+        "question": "拟合出两条趋势线，一条 R²=0.95，一条 R²=0.40，外推该用哪条？",
+        "options": ["R² 越接近 1 拟合越好，0.95 更可信", "R²=0.40 更保守更合适", "R² 越低越准", "两条随便选"],
+        "answer": "R² 越接近 1 拟合越好，0.95 更可信",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post3",
+        "type": "multiple_choice",
+        "question": "公式 y = a·e^(b·x) 表示的加速增长，属于哪类趋势线？",
+        "options": ["指数", "线性", "多项式", "水平"],
+        "answer": "指数",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post4",
+        "type": "multiple_choice",
+        "question": "带“拐弯”的曲线（二次/三次）对应哪类趋势线？",
+        "options": ["多项式", "线性", "指数", "水平"],
+        "answer": "多项式",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post5",
+        "type": "multiple_choice",
+        "question": "关于趋势线外推，下列说法正确的是？",
+        "options": ["别推太远、警惕黑天鹅、配合季节/水平模型", "趋势线永远有效，推多远都行", "黑天鹅不影响历史规律", "纯趋势已包含所有波动"],
+        "answer": "别推太远、警惕黑天鹅、配合季节/水平模型",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post6",
+        "type": "fill",
+        "question": "R² = 1 − ___ / SS_tot（填分子项）。",
+        "answer": "SS_res",
+        "points": 10
       }
-    },
-    {
-      "id": "u44-trend_q2",
-      "type": "multiple_choice",
-      "title": "课后测：外推风险",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 风险大（不可信）",
-          "B. 风险小",
-          "C. 毫无影响",
-          "D. 反而更准"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

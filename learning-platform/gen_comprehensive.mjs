@@ -8,16 +8,22 @@ import path from 'path'
 
 const root = process.cwd()
 const courseId = process.argv[2] || 'supply-chain'
-const courseFile = process.argv[3] || 'supply-chain'
+const courseFiles = (process.argv[3] || 'supply-chain').split(',')
 const dataDir = path.join(root, 'public', 'data')
 const assessDir = path.join(dataDir, 'assessments')
 const examDir = path.join(dataDir, 'exams')
 
-// unitId -> chapter title
-const course = JSON.parse(fs.readFileSync(path.join(dataDir, 'courses', `${courseFile}.json`), 'utf8'))
+// unitId -> chapter title / chapter id (aggregated across all course files)
 const unitChapter = {}
-for (const ch of course.chapters) {
-  for (const u of ch.units) unitChapter[u.id] = ch.title
+const unitChapterId = {}
+for (const cf of courseFiles) {
+  const course = JSON.parse(fs.readFileSync(path.join(dataDir, 'courses', `${cf}.json`), 'utf8'))
+  for (const ch of course.chapters || []) {
+    for (const u of ch.units || []) {
+      unitChapter[u.id] = ch.title
+      unitChapterId[u.id] = ch.id
+    }
+  }
 }
 
 // collect post items per unit

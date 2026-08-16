@@ -1,46 +1,85 @@
 {
   "unitId": "u43-compare",
-  "pre": [
-    {
-      "id": "u43-compare_p1",
-      "type": "multiple_choice",
-      "title": "课前小测：对比分析",
-      "instruction": "凭直觉选（低利害、可跳过）",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 时间维度（同比）",
-          "B. 空间维度",
-          "C. 类别维度",
-          "D. 竞争维度"
-        ]
+  "pre": {
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
+    "items": [
+      {
+        "id": "u43-compare_pre1",
+        "type": "multiple_choice",
+        "question": "老板说“今年比去年好”，他最想听你跟谁比？",
+        "options": ["和竞争对手比", "和去年同一时期比", "和本月目标比", "和员工人数比"],
+        "answer": "和去年同一时期比",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_pre2",
+        "type": "multiple_choice",
+        "question": "同一组销售数据，同样涨了 10%，跟“去年”比和跟“目标”比，你觉着讲出来的故事？",
+        "options": ["完全一样", "可能完全不同", "毫无意义", "只跟目标比才有用"],
+        "answer": "可能完全不同",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_pre3",
+        "type": "multiple_choice",
+        "question": "同行说“A 产品增长了 100%”，你第一反应更可能是？",
+        "options": ["太厉害直接信", "先问一句：基数是多少？", "一定是假的", "跟我没关系"],
+        "answer": "先问一句：基数是多少？",
+        "points": 10
       }
-    }
-  ],
-  "post": [
-    {
-      "id": "u43-compare_q1",
-      "type": "fill",
-      "title": "课后测：核心概念",
-      "instruction": "补全关键术语",
-      "testConfig": {
-        "expected": "时间"
+    ]
+  },
+  "post": {
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
+    "items": [
+      {
+        "id": "u43-compare_post1",
+        "type": "fill",
+        "question": "和“去年同期”比，属于 ___ 维度对比（时间/空间/类别）。",
+        "answer": "时间",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post2",
+        "type": "multiple_choice",
+        "question": "要展示“今年每月销售额相对去年的变化”，最适合用哪类图？",
+        "options": ["折线图", "饼图", "堆叠柱", "雷达图"],
+        "answer": "折线图",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post3",
+        "type": "fill",
+        "question": "要比较各区域销售额大小，最适合的图表是 ___（柱状图/折线图/饼图）。",
+        "answer": "柱状图",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post4",
+        "type": "multiple_choice",
+        "question": "同行说“A 产品增长 100%”，你发现它只是从月销 1 件涨到 2 件。这最可能踩了哪个陷阱？",
+        "options": ["基期陷阱", "百分比陷阱", "幸存者偏差", "都没踩"],
+        "answer": "百分比陷阱",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post5",
+        "type": "multiple_choice",
+        "question": "做对比分析时，第一步最该做的是？",
+        "options": ["先定维度再下结论", "随便比都行", "只看百分比", "只看绝对量"],
+        "answer": "先定维度再下结论",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post6",
+        "type": "multiple_choice",
+        "question": "关于“基期陷阱”，下列说法正确的是？",
+        "options": ["同比时要看去年口径是否一致（如是否含大促）", "百分比永远是错的", "只看幸存者偏差即可", "无需关心基期"],
+        "answer": "同比时要看去年口径是否一致（如是否含大促）",
+        "points": 10
       }
-    },
-    {
-      "id": "u43-compare_q2",
-      "type": "multiple_choice",
-      "title": "课后测：图表选择",
-      "instruction": "选最贴切的一项",
-      "testConfig": {
-        "expected": "A",
-        "options": [
-          "A. 柱状图（比大小最直观）",
-          "B. 折线图（看趋势）",
-          "C. 饼图（看占比）",
-          "D. 雷达图（看多维）"
-        ]
-      }
-    }
-  ]
+    ]
+  }
 }

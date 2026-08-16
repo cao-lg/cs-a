@@ -1,51 +1,85 @@
 {
   "unitId": "u01-temperature",
   "pre": {
-    "title": "课前测：你现在的温度直觉",
-    "description": "不用算，凭直觉选。测测你对摄氏和华氏的敏感度。",
+    "title": "课前测：先想想再开课",
+    "description": "不用背，凭直觉和常识选。目的是引出兴趣、激活你已有的认知。",
     "items": [
       {
-        "id": "u01_pre1",
+        "id": "u01-temperature_pre1",
         "type": "multiple_choice",
         "question": "人体正常体温约 37°C，你觉得大约是多少 °F？",
-        "options": ["37°F", "68°F", "98.6°F", "212°F"],
+        "options": [
+          "37°F",
+          "68°F",
+          "98.6°F",
+          "212°F"
+        ],
         "answer": "98.6°F",
         "points": 10
       },
       {
-        "id": "u01_pre2",
+        "id": "u01-temperature_pre2",
         "type": "multiple_choice",
-        "question": "水烧开时的温度，两个温标分别是？",
-        "options": ["0°C / 32°F", "100°C / 212°F", "37°C / 98.6°F", "100°C / 100°F"],
+        "question": "水烧开时的温度，摄氏和华氏两个温标分别是？",
+        "options": [
+          "0°C / 32°F",
+          "100°C / 212°F",
+          "37°C / 98.6°F",
+          "100°C / 100°F"
+        ],
         "answer": "100°C / 212°F",
+        "points": 10
+      },
+      {
+        "id": "u01-temperature_pre3",
+        "type": "multiple_choice",
+        "question": "凭常识，华氏 32°F 大概对应摄氏多少度？",
+        "options": [
+          "0°C",
+          "100°C",
+          "37°C",
+          "212°C"
+        ],
+        "answer": "0°C",
         "points": 10
       }
     ]
   },
   "post": {
-    "title": "课后测：你能当星际烘焙师了",
-    "description": "用公式算一算，看看能不能在火星开店。",
+    "title": "课后测：巩固本任务要点",
+    "description": "检验你是否真正掌握本任务的核心内容。",
     "items": [
       {
-        "id": "u01_post1",
+        "id": "u01-temperature_post1",
+        "type": "multiple_choice",
+        "question": "水的冰点 0°C 等于多少 °F？",
+        "options": [
+          "0°F",
+          "32°F",
+          "100°F"
+        ],
+        "answer": "32°F",
+        "points": 10
+      },
+      {
+        "id": "u01-temperature_post2",
         "type": "fill",
-        "question": "公式 F = C × ___ + 32，横线处填什么分数？",
+        "question": "补全公式：F = C × ___ + 32",
         "answer": "9/5",
         "points": 10
       },
       {
-        "id": "u01_post2",
+        "id": "u01-temperature_post3",
         "type": "fill",
-        "question": "烤箱预热 200°C，约等于 _____°F（取整）。",
-        "answer": "392",
+        "question": "可颂第一次发酵需要 25°C，你的华氏烤箱该设约多少度（取整）？",
+        "answer": "77",
         "points": 10
       },
       {
-        "id": "u01_post3",
-        "type": "multiple_choice",
-        "question": "火星夏天 30°C，体感约多少 °F？",
-        "options": ["54°F", "86°F", "100°F", "30°F"],
-        "answer": "86°F",
+        "id": "u01-temperature_post4",
+        "type": "fill",
+        "question": "地球订单法棍需 220°C 高温快烤，华氏烤箱该调到约多少度（取整）？",
+        "answer": "428",
         "points": 10
       }
     ]
