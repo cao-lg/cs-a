@@ -17,6 +17,20 @@ export async function getCourse(id) {
   return r.json()
 }
 
+// 记忆化：返回 manifest 中第一个课程 id，供顶栏/画像页拼 /tests/:courseId 入口。
+// 注意：manifest.courses 是课程 id 字符串数组（如 ["supply-chain", ...]），直接取首项即可。
+let _defaultCourseId = null
+export async function defaultCourseId() {
+  if (_defaultCourseId) return _defaultCourseId
+  try {
+    const courses = await listCourses()
+    _defaultCourseId = courses?.[0] || null
+  } catch {
+    _defaultCourseId = null
+  }
+  return _defaultCourseId
+}
+
 export async function getUnitContent(path) {
   const r = await fetch(`${DATA}/courses/${path}`)
   return r.text()
