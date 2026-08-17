@@ -85,6 +85,8 @@ export async function getProgress() {
     (await get(PROGRESS_KEY)) || {
       xp: 0,
       streak: 0,
+      streakDays: 0,
+      lastDay: null,
       badges: [],
       updated_at: Date.now()
     }
