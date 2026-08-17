@@ -79,6 +79,85 @@
         "options": ["同比时要看去年口径是否一致（如是否含大促）", "百分比永远是错的", "只看幸存者偏差即可", "无需关心基期"],
         "answer": "同比时要看去年口径是否一致（如是否含大促）",
         "points": 10
+      },
+      {
+        "id": "u43-compare_post7",
+        "type": "multiple_choice",
+        "question": "“华东 vs 华南、线上 vs 线下，看哪里强”，这属于对比的哪个维度？",
+        "options": ["空间", "时间", "目标", "竞争"],
+        "answer": "空间",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post8",
+        "type": "multiple_choice",
+        "question": "“实际销量 vs 目标 / KPI，看达标没”，这属于对比的哪个维度？",
+        "options": ["目标", "类别", "空间", "时间"],
+        "answer": "目标",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post9",
+        "type": "multiple_choice",
+        "question": "“自家 vs 竞品、vs 行业均值，看排第几”，这属于对比的哪个维度？",
+        "options": ["竞争", "时间", "空间", "目标"],
+        "answer": "竞争",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post10",
+        "type": "multiple_choice",
+        "question": "“品类 A vs 品类 B、客群分层，看结构差异”，这属于对比的哪个维度？",
+        "options": ["类别", "竞争", "空间", "时间"],
+        "answer": "类别",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post11",
+        "type": "multiple_choice",
+        "question": "想突出“各渠道销售额占总盘子的份额”，最适合用哪类图？",
+        "options": ["饼图 / 堆叠柱", "折线图", "子弹图", "雷达图"],
+        "answer": "饼图 / 堆叠柱",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post12",
+        "type": "multiple_choice",
+        "question": "想展示“距目标还有多远、目标达成度”，最适合用哪类图？",
+        "options": ["子弹图 / 仪表盘", "饼图", "折线图", "热力图"],
+        "answer": "子弹图 / 仪表盘",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post13",
+        "type": "multiple_choice",
+        "question": "自家与竞品做多维对标（如价格、质量、服务一起比），最适合用哪类图？",
+        "options": ["雷达图", "饼图", "堆叠柱", "子弹图"],
+        "answer": "雷达图",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post14",
+        "type": "multiple_choice",
+        "question": "“本月 vs 上月”的对比，在课程里叫什么？",
+        "options": ["环比（MoM）", "同比（YoY）", "定基比", "基期陷阱"],
+        "answer": "环比（MoM）",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post15",
+        "type": "multiple_choice",
+        "question": "关于“幸存者偏差”，下列说法正确的是？",
+        "options": ["只比留下来的客户、忽略流失的，结论会失真", "只看百分比最安全", "基期陷阱就是幸存者偏差", "只跟去年比即可避免"],
+        "answer": "只比留下来的客户、忽略流失的，结论会失真",
+        "points": 10
+      },
+      {
+        "id": "u43-compare_post16",
+        "type": "fill",
+        "question": "同比（今年 vs 去年）、环比（本月 vs 上月）都归到 ___ 维度（时间/空间/类别）。",
+        "answer": "时间",
+        "points": 10
       }
     ]
   }

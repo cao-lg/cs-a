@@ -79,6 +79,69 @@
         "options": ["用对比/交叉分析定位边际 ROI 高的渠道", "只看总销售额", "随机分配", "只看库存"],
         "answer": "用对比/交叉分析定位边际 ROI 高的渠道",
         "points": 10
+      },
+      {
+        "id": "u45-agent_post7",
+        "type": "fill",
+        "question": "数据长期单调上升 / 下降的序列，应匹配 ___ 模型（水平/季节/趋势）。",
+        "answer": "趋势",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post8",
+        "type": "multiple_choice",
+        "question": "周期性起伏明显、用“季节指数”法的序列，在课程里对应的代表单元是？",
+        "options": ["u44-season", "u44-level", "u44-trend", "u41-indicators"],
+        "answer": "u44-season",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post9",
+        "type": "multiple_choice",
+        "question": "无趋势无季节、绕均值波动、用“移动平均/指数平滑”的序列，对应代表单元是？",
+        "options": ["u44-level", "u44-season", "u44-trend", "u43-cross"],
+        "answer": "u44-level",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post10",
+        "type": "multiple_choice",
+        "question": "从预测到落地的备货建议，正确链路是？",
+        "options": ["需求预测 → 安全库存 → 再订货点", "直接给再订货点，无需预测", "只看趋势线即可", "只算安全库存"],
+        "answer": "需求预测 → 安全库存 → 再订货点",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post11",
+        "type": "multiple_choice",
+        "question": "再订货点公式中的“提前期”指的是？",
+        "options": ["从下单到到货的时间", "日均销售量", "安全库存大小", "订单转化率"],
+        "answer": "从下单到到货的时间",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post12",
+        "type": "multiple_choice",
+        "question": "可信建议四件套中的“假设”应说明什么？",
+        "options": ["大促 / 节假日如何处理", "只给备货数字", "只用一种模型", "忽略风险"],
+        "answer": "大促 / 节假日如何处理",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post13",
+        "type": "multiple_choice",
+        "question": "“若需求超预测 20%，将断货”这样的说明，属于四件套的哪一部分？",
+        "options": ["动作及风险边界", "数据", "模型", "假设"],
+        "answer": "动作及风险边界",
+        "points": 10
+      },
+      {
+        "id": "u45-agent_post14",
+        "type": "multiple_choice",
+        "question": "智能体做预测与决策，第一步最该做的是？",
+        "options": ["先判断序列属于哪类，再匹配模型（先分类再选模型）", "直接给一个预测数", "先定渠道倾斜", "只看历史最高值"],
+        "answer": "先判断序列属于哪类，再匹配模型（先分类再选模型）",
+        "points": 10
       }
     ]
   }

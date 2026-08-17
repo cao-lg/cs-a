@@ -79,6 +79,61 @@
         "options": ["旺季", "淡季", "异常值", "平稳期"],
         "answer": "淡季",
         "points": 10
+      },
+      {
+        "id": "u44-season_post7",
+        "type": "multiple_choice",
+        "question": "所谓“季节波动”，是指数据？",
+        "options": ["随季节 / 周期规律起伏（如月饼中秋旺、空调夏天旺）", "随机无规律噪音", "长期单调上升", "围绕均值不变"],
+        "answer": "随季节 / 周期规律起伏（如月饼中秋旺、空调夏天旺）",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post8",
+        "type": "multiple_choice",
+        "question": "用四步法算季节指数，第一步应该是？",
+        "options": ["算同季平均（每年同一季求平均）", "直接求预测值", "做日历调整", "乘安全系数"],
+        "answer": "算同季平均（每年同一季求平均）",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post9",
+        "type": "fill",
+        "question": "上例中 Q1 同季平均 11、总平均 19，Q1 的季节指数约为 ___（保留两位小数的数字）。",
+        "answer": "0.58",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post10",
+        "type": "multiple_choice",
+        "question": "课程说“指数越大旺季越旺”，说明季节指数与旺季程度的关系是？",
+        "options": ["指数 > 1 且越大越旺", "指数越小越旺", "指数恒等于 1", "与指数无关"],
+        "answer": "指数 > 1 且越大越旺",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post11",
+        "type": "multiple_choice",
+        "question": "用季节指数法预测某季销量，正确公式是？",
+        "options": ["趋势值（或总平均） × 季节指数", "只除以季节指数", "季节指数相加", "用移动平均即可"],
+        "answer": "趋势值（或总平均） × 季节指数",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post12",
+        "type": "multiple_choice",
+        "question": "闰年、节假日挪动会影响季节可比性，应做？",
+        "options": ["日历调整", "直接忽略", "只保留 1 年数据", "乘更大的季节指数"],
+        "answer": "日历调整",
+        "points": 10
+      },
+      {
+        "id": "u44-season_post13",
+        "type": "multiple_choice",
+        "question": "像月饼这种全年只旺几周的商品，其季节指数特点是？",
+        "options": ["会极端偏高，更要注意库存风险", "一定等于 1", "一定小于 0", "与淡季一样"],
+        "answer": "会极端偏高，更要注意库存风险",
+        "points": 10
       }
     ]
   }

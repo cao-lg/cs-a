@@ -79,6 +79,54 @@
         "question": "R² = 1 − ___ / SS_tot（填分子项）。",
         "answer": "SS_res",
         "points": 10
+      },
+      {
+        "id": "u44-trend_post7",
+        "type": "multiple_choice",
+        "question": "公式 y = a + b·x（匀速增长）对应的是哪类趋势线？",
+        "options": ["线性", "多项式", "指数", "水平"],
+        "answer": "线性",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post8",
+        "type": "multiple_choice",
+        "question": "R² = 1 − SS_res / SS_tot 中，SS_res 指？",
+        "options": ["残差平方和（实际值与预测值之差的平方和）", "总平方和", "实际值与均值之差", "趋势斜率"],
+        "answer": "残差平方和（实际值与预测值之差的平方和）",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post9",
+        "type": "multiple_choice",
+        "question": "R² = 1 − SS_res / SS_tot 中，SS_tot 指？",
+        "options": ["总平方和（实际值与均值之差的平方和）", "残差平方和", "预测值之和", "趋势截距"],
+        "answer": "总平方和（实际值与均值之差的平方和）",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post10",
+        "type": "multiple_choice",
+        "question": "线性最小二乘中，斜率 b 的公式是？",
+        "options": ["b = Σ((x−x̄)(y−ȳ)) / Σ(x−x̄)²", "b = ȳ − b·x̄", "b = a + b·x", "b = SS_res / SS_tot"],
+        "answer": "b = Σ((x−x̄)(y−ȳ)) / Σ(x−x̄)²",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post11",
+        "type": "multiple_choice",
+        "question": "外推三诫中“警惕黑天鹅”指？",
+        "options": ["疫情、政策等会让历史规律作废", "散点贴线就行", "趋势永远有效", "只看 R² 即可"],
+        "answer": "疫情、政策等会让历史规律作废",
+        "points": 10
+      },
+      {
+        "id": "u44-trend_post12",
+        "type": "multiple_choice",
+        "question": "纯趋势线长期外推的主要不足是？",
+        "options": ["忽略波动，需叠加季节/水平模型", "完全准确", "只适合短期无影响", "R² 一定变低"],
+        "answer": "忽略波动，需叠加季节/水平模型",
+        "points": 10
       }
     ]
   }

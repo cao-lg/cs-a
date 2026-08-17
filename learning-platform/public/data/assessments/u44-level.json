@@ -78,6 +78,61 @@
         "options": ["MAE / MAPE 比较选误差小的", "只看 R²", "直接外推", "不需要比较"],
         "answer": "MAE / MAPE 比较选误差小的",
         "points": 10
+      },
+      {
+        "id": "u44-level_post7",
+        "type": "multiple_choice",
+        "question": "移动平均的窗口大小 N 越大，预测会怎样？",
+        "options": ["越平滑、也越滞后", "越跟手、越灵敏", "完全无影响", "只影响短期"],
+        "answer": "越平滑、也越滞后",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post8",
+        "type": "multiple_choice",
+        "question": "指数平滑的平滑系数 α 取值范围是？",
+        "options": ["(0, 1]", "[0, 1]", "(0, 1)", "[1, 2]"],
+        "answer": "(0, 1]",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post9",
+        "type": "fill",
+        "question": "已知 F₁ = A₁ = 130，α = 0.5，后续实际值 [130, 140]，则 F₃ = 0.5×130 + 0.5×140 = ___（保留整数）。",
+        "answer": "135",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post10",
+        "type": "multiple_choice",
+        "question": "数据平稳、只想简单快速地出预测，最适合用哪种方法？",
+        "options": ["移动平均（取最近 N 期平均）", "季节指数", "趋势线外推", "多项式拟合"],
+        "answer": "移动平均（取最近 N 期平均）",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post11",
+        "type": "multiple_choice",
+        "question": "想自动给近期更大权重、又不想存整段历史窗口，应该用？",
+        "options": ["指数平滑（用 α 调灵敏度）", "移动平均", "季节指数", "趋势线"],
+        "answer": "指数平滑（用 α 调灵敏度）",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post12",
+        "type": "multiple_choice",
+        "question": "销量突然出现大促峰值，正确的处理方式是？",
+        "options": ["先剔异常 / 叠加季节性，再做水平预测", "直接拿峰值算下期", "忽略不计", "改用趋势线外推十年"],
+        "answer": "先剔异常 / 叠加季节性，再做水平预测",
+        "points": 10
+      },
+      {
+        "id": "u44-level_post13",
+        "type": "multiple_choice",
+        "question": "公式 F₍ₜ₊₁₎ = α·Aₜ + (1−α)·Fₜ 的本质是？",
+        "options": ["上期预测值与本期实际值的加权平均", "两期实际值的简单平均", "季节指数相乘", "趋势外推"],
+        "answer": "上期预测值与本期实际值的加权平均",
+        "points": 10
       }
     ]
   }

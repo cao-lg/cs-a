@@ -80,13 +80,16 @@ for (const [unitId, items] of Object.entries(banks)) {
   })
 }
 
+// 抽题量：至少覆盖全部单元（每单元保底 1 题由 buildExamVariant 保证），
+// 再额外补足约 60% 的题量以加深覆盖面。cs-a≈53、ss-a≈79。
+const pick = Math.max(coveredUnits, Math.min(90, Math.ceil(coveredUnits * 1.6)))
 const metas = titles.map((t, i) => ({
   courseId,
   chapterId: i === 0 ? 'final' : `final-${i + 1}`,
   title: t,
   description: descs[i],
   passScore: 70,
-  pick: 30
+  pick
 }))
 
 exams.forEach((ex, i) => {
