@@ -1,37 +1,59 @@
-# 身份机制澄清 + 老师独立平台（teacher-console）
+# 教师平台迭代：跨设备迁移、邮件发送、激活码/学生明细展示
 
-## 一、关于「mac」—— 不是网卡，已满足跨电脑诉求
+## 一、已完成的功能
 
-代码里的 `mac` 是 **密码学 Message Authentication Code（HMAC-SHA256）**，用于给数据算防伪校验码，**与网卡 MAC 地址毫无关系**。它绑定的是「学号+姓名+激活码」这一身份，全程不采集任何设备信息。学生导出文件自带 `identity(学号,姓名)+mac`，**换电脑/重装/换浏览器只要导入就原位恢复同一身份**——天然「同人、跨设备、不锁物理机」，无需改代码。
+### 1. 教师端跨设备导入/导出
+- `teacher-console` 新增「老师跨设备迁移」：可把激活码库、已导入学生文件、邮件配置打包为 JSON 导出；换电脑后导入即可继续分析。
+- 导出文件类型为 `teacher-console-session`，含 `secrets / files / teacherEmail`，**仍不上传任何服务器**。
 
-## 二、老师独立平台 teacher-console（已建，零后端、零上传）
+### 2. 学生端 + 教师端「邮件发送」能力
+- **学生端**（cs-a / ss-a）：在「数据管理」面板增加老师邮箱输入框 + **「导出并发送给老师」**按钮。
+  - 自动导出 JSON 学习数据并下载。
+  - 唤起系统邮件客户端，`mailto:` 预填固定主题：`[学练测平台] 学习数据提交 - 学号{sid} 姓名{name} - {日期}`，正文含归属信息，方便老师按主题归档。
+  - 零后端、不经过任何第三方服务器，数据文件仍只存在用户本地，老师收到后手动附加 JSON 即可。
+- **教师端**（tc）：在「分析报表」面板增加目标邮箱配置 + **「邮件发送报表」**按钮。
+  - 预填主题：`[学练测平台] 平时成绩分析报表 - {日期} - 共{人数}人`，正文含班级概况。
 
-按你的约束落地：**本地优先网页工具**，不碰 D1、不上传数据库、只导入多个文件分析、要存也存本地。
+### 3. 教师端 UI 完善
+- **发放激活码面板**：
+  - 顶部直接展示「已签发学生名单（x 人）」表格，含学号、姓名、证书状态。
+  - 粘贴 `tools/teacher-secrets.json` 后展示「发放明细」表格（学号 · 姓名 · 激活码）。
+  - 名册编辑、本地签发命令提示保留。
+- **导入与核验面板**：
+  - 已导入文件列表保留（真实/被篡改/非本校）。
+  - 新增「已核验学生明细」表格：学号、姓名、激活码（脱敏显示）、阶段考均分、单元均分、XP、等级、学习分钟、错题数。
+- **分析报表面板**：
+  - 概览卡、成绩分布、综合排名、高频错点、学生明细、导出 CSV、邮件发送报表。
 
-路径：`D:/workbuddy/chain_supply/teacher-console`（Vite 纯前端，构建仅 11KB JS）。
+### 4. 工程调整
+- `tools/issue-codes.mjs`：把 `public.json` + `certs.json` 统一输出到 `src/data/`，教师端和学生站同源。
+- `src/verify.js`：动态读取 `src/data/public.json`，fallback 到硬编码 `public.js`，便于轮换公钥后自动生效。
+- 新增默认空 `src/data/certs.json`，避免首次 clone 未签发时构建报错。
+- `index.html` 引入 Outfit 字体，保持与学生站一致。
 
-### 为什么不能「纯公开静态」
-老师平台要生成激活码（需 **Ed25519 私钥**）和核验防篡改（需每生 **激活码**），二者皆机密。若做成纯公开静态页，密钥必进前端 → 任何人都可伪造证书/篡改导出，防冒用体系崩溃；且学号+姓名+记录是个人信息，公开匿名访问违反《个保法》。所以采用「**公开部署 + 老师本机持有密钥**」的本地工具形态：私钥/激活码只在本机 `tools/`，前端仅内置公钥+公开证书。
+## 二、安全与隐私红线
 
-### 三面板
-1. **① 发放激活码**：`tools/issue-codes.mjs` 读 `roster.csv`（学号,姓名），自动生成激活码、用同一私钥签发证书，输出 `certs.json`(公开) + `public.json`(公钥)，与学生站同源。
-2. **② 导入与核验**：选多个学生导出 `.json` → **公钥验身份归属**（确认真实学生）+ **激活码验 HMAC**（确认导出后未被篡改，篡改自动标红剔除）。
-3. **③ 可视化分析**：概览卡（人数/均分/XP/时长/错题）、成绩分布柱状图、综合排名、高频错点（重点讲评）、学生明细、**导出 CSV**。数据仅存浏览器本地或导出文件，**绝不上传**。
+- **私钥** `tools/teacher-keys.json` 与 **激活码库** `tools/teacher-secrets.json` 仍只存本机，已 gitignore，**不进库、不进前端、不上传**。
+- `certs.json`（公开证书）与 `public.json`（公钥）可公开给学生站，不含激活码。
+- 邮件功能使用 `mailto:` 协议唤起本地邮件客户端，**不经过任何邮件服务商后端**，不泄露数据。
 
-### 安全红线（已落实）
-- `tools/teacher-keys.json`(私钥) 与 `tools/teacher-secrets.json`(激活码) 已 gitignore，**不入库、不进前端、不上传**。
-- 学生站已签发学生，在此处可直接跨站核验（复用同一 `identity.js`）。
+## 三、验证
 
-## 三、关键修复
-`verifyCert` 原仅接受 JWK 并要求重新 `importPublicKey`；老师工具 verify 路径误传已导入的 `CryptoKey`，导致 `importPublicKey` 抛错、证书校验**恒为 false**。已改为兼容 `CryptoKey` 或 `JWK`，并同步到 cs-a / ss-a。
+- **三站 `npm run build` 均 0 error**：
+  - `teacher-console`：构建 17KB JS，正常。
+  - `learning-platform` / `sales-platform`：构建成功（chunk 大小警告，不影响功能）。
+- `teacher-console` 预览服务可正常访问，三面板 UI 渲染正常。
+- 学生端 AdminConsole 新 UI 已渲染，邮件按钮与邮箱输入框就位。
 
-## 四、验证结果
-- **Node 端 round-trip 全通**：正常文件 → `✓真实 + ✓未篡改`；篡改文件 → `✓真实 + ✗被篡改`（HMAC 精准捕获）。
-- **三站 `npm run build` 均 0 error**（cs-a / ss-a / tc）。
-- tc 预览服务 HTML + JS bundle 均 200，应用正常启动。
-- 说明：agent-browser 拉起 Chromium 仍挂死，UI 交互未跑端到端；逻辑经代码审查 + Node 核验 + 构建验证确认。
+## 四、提交与推送状态
+
+- `teacher-console`：已本地提交 `b613480`。
+- `learning-platform`（即 chain_supply 父仓库，对应 cs-a 远端）：已本地提交 `5ba272b`，包含学生端邮件功能 + overview。
+- `sales-platform`：已本地提交 `2ecbc3f`。
+- **待推送**：cs-a / ss-a / tc-a 均需一次性 GitHub Personal Access Token 完成推送。`cao-lg/tc-a` 仓库尚未创建。
 
 ## 五、待办
-1. **推送**：cs-a（lp）待内联 token 推送（`verifyCert` 修复）；ss-a 已本地提交 `f709db9` 待推送；tc 远端 `cao-lg/tc-a` 待建并推送。
-2. **轮换 ss-a 暴露 token** `ghp_YXPn…`（仍有效，须到 GitHub 撤销）。
-3. 上线后人工浏览器验证 tc 三面板交互（导入多个真实学生导出、看报表渲染）。
+
+1. 提供 GitHub Personal Access Token，完成 cs-a / ss-a / tc-a 的推送（tc-a 需先创建仓库）。
+2. 到 GitHub 撤销并轮换此前 ss-a remote 暴露的 token（如尚未处理）。
+3. 上线后用真实学生导出文件跑一遍教师端完整流程：发码 → 学生导出 → 老师导入核验 → 邮件发送报表。
