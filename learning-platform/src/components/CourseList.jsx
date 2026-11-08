@@ -56,7 +56,7 @@ export default function CourseList() {
         <div>
           <span className="hero-badge">✦ {course.title}</span>
           <h1>
-            跟随小北，把供应链知识
+            跟随小链，把供应链知识
             <br />
             <span className="grad">变成一场成长旅程</span>
           </h1>
