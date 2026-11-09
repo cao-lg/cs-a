@@ -236,6 +236,20 @@
           "postAssessment": "sc-5-1"
         },
         {
+          "id": "sc-5-3",
+          "title": "任务：运输优化——基于实时数据的路径规划与调度",
+          "path": "sc-5-3.md",
+          "duration": "约 24 分钟",
+          "objectives": [
+            "运输优化的价值与四维度目标",
+            "动态路由规划：VRP 变体算法与实时数据",
+            "智慧调度系统的三大核心模块",
+            "多式联运与共同配送：GIS、Dijkstra 与多目标优化"
+          ],
+          "preAssessment": "sc-5-3",
+          "postAssessment": "sc-5-3"
+        },
+        {
           "id": "sc-5-2",
           "title": "任务：智能仓储：数据驱动的仓储优化",
           "path": "sc-5-2.md",
