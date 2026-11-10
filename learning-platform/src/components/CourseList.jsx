@@ -109,7 +109,7 @@ export default function CourseList() {
 
       <div className="section-head">
         <h2>全部项目</h2>
-        <span className="sub">7 大项目，从基础认知到 AI 前沿</span>
+        <span className="sub">7 大项目，从基础认知到风险智能预警</span>
       </div>
 
       <Stagger className="chapters-grid" mount>

@@ -1,0 +1,184 @@
+{
+  "chapterId": "ch6",
+  "courseId": "supply-chain",
+  "title": "项目六 阶段考试",
+  "description": "覆盖供应链风险智能预警：风险管理转型、舆情感知与量化预警模型的综合测验。",
+  "passScore": 60,
+  "pick": 10,
+  "pool": [
+    {
+      "id": "ch6-q1",
+      "type": "multiple_choice",
+      "unitId": "sc-6-1",
+      "concept": "传统局限",
+      "question": "传统供应链风险管理的局限通常不包括？",
+      "options": [
+        "全链路实时、主动前瞻",
+        "滞后响应",
+        "信息孤岛",
+        "静态评估"
+      ],
+      "answer": "全链路实时、主动前瞻",
+      "points": 10
+    },
+    {
+      "id": "ch6-q2",
+      "type": "multiple_choice",
+      "unitId": "sc-6-1",
+      "concept": "智能五转型",
+      "question": "智能时代风险管理转型方向不包括？",
+      "options": [
+        "能力封闭、互不共享",
+        "动态适应",
+        "数据驱动",
+        "生态协同"
+      ],
+      "answer": "能力封闭、互不共享",
+      "points": 10
+    },
+    {
+      "id": "ch6-q3",
+      "type": "multiple_choice",
+      "unitId": "sc-6-2",
+      "concept": "舆情监测四步",
+      "question": "多源舆情监测的典型流程是？",
+      "options": [
+        "采集—预处理—监测—异常识别",
+        "采集—忽略—删除—遗忘",
+        "监测—造假—掩盖—删除",
+        "发布—删除—再发布—再删除"
+      ],
+      "answer": "采集—预处理—监测—异常识别",
+      "points": 10
+    },
+    {
+      "id": "ch6-q4",
+      "type": "multiple_choice",
+      "unitId": "sc-6-2",
+      "concept": "多源数据特征",
+      "question": "供应链舆情多源数据的特点通常是？",
+      "options": [
+        "多模态、海量、异构、实时",
+        "单一、少量、同构、离线",
+        "仅内部数据",
+        "仅纸质文件"
+      ],
+      "answer": "多模态、海量、异构、实时",
+      "points": 10
+    },
+    {
+      "id": "ch6-q5",
+      "type": "multiple_choice",
+      "unitId": "sc-6-3",
+      "concept": "预警分级",
+      "question": "供应链风险预警常采用的颜色分级是？",
+      "options": [
+        "红、橙、黄、蓝",
+        "红、绿、紫、黑",
+        "一、二、三、四",
+        "高、中、低、零"
+      ],
+      "answer": "红、橙、黄、蓝",
+      "points": 10
+    },
+    {
+      "id": "ch6-q6",
+      "type": "multiple_choice",
+      "unitId": "sc-6-3",
+      "concept": "风险量化",
+      "question": "风险量化通常会从哪些维度刻画？",
+      "options": [
+        "发生可能性、影响程度、传播速度、可检测性",
+        "仅价格",
+        "仅销量",
+        "仅人工感觉"
+      ],
+      "answer": "发生可能性、影响程度、传播速度、可检测性",
+      "points": 10
+    },
+    {
+      "id": "ch6-q7",
+      "type": "multiple_choice",
+      "unitId": "sc-6-3",
+      "concept": "舆情分析三阶",
+      "question": "舆情深度分析“一建二析三展示”中的“建”指？",
+      "options": [
+        "建立舆情指标与知识库体系",
+        "建群聊天",
+        "建楼",
+        "建仓库"
+      ],
+      "answer": "建立舆情指标与知识库体系",
+      "points": 10
+    },
+    {
+      "id": "ch6-q8",
+      "type": "multiple_choice",
+      "unitId": "sc-6-1",
+      "concept": "转型价值",
+      "question": "智能风险预警的核心价值在于？",
+      "options": [
+        "把风险从事后补救转为事前预防",
+        "只做事后理赔",
+        "取消风控",
+        "增加盲区"
+      ],
+      "answer": "把风险从事后补救转为事前预防",
+      "points": 10
+    },
+    {
+      "id": "ch6-q9",
+      "type": "multiple_choice",
+      "unitId": "sc-6-2",
+      "concept": "诚信底线",
+      "question": "在使用第三方舆情与风险数据时，必须坚守的底线是？",
+      "options": [
+        "数据真实、合法合规，不造假",
+        "随意编造风险",
+        "购买虚假情报",
+        "忽视合规"
+      ],
+      "answer": "数据真实、合法合规，不造假",
+      "points": 10
+    },
+    {
+      "id": "ch6-q10",
+      "type": "multiple_choice",
+      "unitId": "sc-6-3",
+      "concept": "闭环处置",
+      "question": "风险预警之后应当形成？",
+      "options": [
+        "监测—预警—处置—复盘 的闭环",
+        "预警即结束",
+        "只记录不处理",
+        "隐瞒不报"
+      ],
+      "answer": "监测—预警—处置—复盘 的闭环",
+      "points": 10
+    },
+    {
+      "id": "ch6-q11",
+      "type": "multiple_choice",
+      "unitId": "sc-6-1",
+      "concept": "动态适应",
+      "question": "“动态适应”型风险管理强调？",
+      "options": [
+        "随环境变化持续调整风控策略",
+        "一次设定永不改变",
+        "完全不管变化",
+        "只靠人工经验"
+      ],
+      "answer": "随环境变化持续调整风控策略",
+      "points": 10
+    },
+    {
+      "id": "ch6-q12",
+      "type": "fill",
+      "unitId": "sc-6-2",
+      "concept": "多源数据",
+      "question": "供应链风险感知不仅要看企业内部数据，还要整合_____（上下游/第三方）等多源数据。",
+      "answer": "外部",
+      "points": 10
+    }
+  ]
+}
